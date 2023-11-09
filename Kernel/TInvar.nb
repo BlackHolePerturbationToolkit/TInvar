@@ -13,7 +13,7 @@ CellGroupData[
 {
 Cell["TInvar package", "Title"],
 Cell[
-"Canonicalization of invariants involving the Riemann tensor",
+"Canonicalization of expressions involving the Riemann tensor",
 "Subtitle"
 ],
 Cell[
