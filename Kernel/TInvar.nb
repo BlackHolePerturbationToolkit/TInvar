@@ -35,122 +35,526 @@ StyleBox["Wolfram Research\n\n", FontSlant -> "Italic"],
 Cell[
 CellGroupData[
 {
+Cell["Begin Package", "Section"],
 Cell[
-BoxData[RowBox[{" ", RowBox[{"<<", "xAct`xTensor`"}]}]],
-"Input"
-],
-Cell[
-CellGroupData[
+BoxData[
 {
-Cell[
-BoxData[
-"\"------------------------------------------------------------\""
-],
-"Print"
-],
-Cell[
-BoxData[
-InterpretationBox[
 RowBox[
 {
-"\"Package xAct`xPerm`  version \"",
-"\[InvisibleSpace]",
-"\"1.2.3\"",
-"\[InvisibleSpace]",
-"\", \"",
-"\[InvisibleSpace]",
-RowBox[{"{", RowBox[{"2015", ",", "8", ",", "23"}], "}"}]
+RowBox[
+{
+"xAct`TInvar`$xTensorVersionExpected",
+" ",
+"=",
+" ",
+RowBox[
+{
+"{",
+RowBox[
+{
+"\"1.2.0\"",
+",",
+" ",
+RowBox[
+{
+"{",
+RowBox[{"2021", ",", " ", "10", ",", " ", "17"}],
+"}"
+}
+]
 }
 ],
-"Package xAct`xPerm`  version ""1.2.3"", "{2015, 8, 23},
-Editable -> False
+"}"
+}
 ]
-],
-"Print"
-],
-Cell[
-BoxData[
-"\"CopyRight (C) 2003-2020, Jose M. Martin-Garcia, under the General Public License.\""
-],
-"Print"
-],
-Cell[
-BoxData["\"Connecting to external mac executable...\""],
-"Print"
-],
-Cell[BoxData["\"Connection established.\""], "Print"],
-Cell[
-BoxData[
-"\"------------------------------------------------------------\""
-],
-"Print"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"Package xAct`xTensor`  version \"",
-"\[InvisibleSpace]",
-"\"1.1.4\"",
-"\[InvisibleSpace]",
-"\", \"",
-"\[InvisibleSpace]",
-RowBox[{"{", RowBox[{"2020", ",", "2", ",", "16"}], "}"}]
 }
 ],
-"Package xAct`xTensor`  version ""1.1.4"", "{2020, 2, 16},
-Editable -> False
-]
+";"
+}
 ],
-"Print"
-],
-Cell[
-BoxData[
-"\"CopyRight (C) 2002-2020, Jose M. Martin-Garcia, under the General Public License.\""
-],
-"Print"
-],
-Cell[
-BoxData[
-"\"------------------------------------------------------------\""
-],
-"Print"
-],
-Cell[
-BoxData[
-"\"These packages come with ABSOLUTELY NO WARRANTY; for details type Disclaimer[]. This is free software, and you are welcome to redistribute it under certain conditions. See the General Public License for details.\""
-],
-"Print"
-],
-Cell[
-BoxData[
-"\"------------------------------------------------------------\""
-],
-"Print"
-]
-},
-Open
-]
-]
-},
-Open
-]
-],
-Cell[
-CellGroupData[
-{
-Cell[
-BoxData[
-{
+"\n",
 RowBox[
 {
+"xAct`TInvar`$Version",
+" ",
+"=",
+" ",
 RowBox[
 {
-"ReportSet",
+"{",
+RowBox[
+{
+"\"0.1.0\"",
+",",
+" ",
+RowBox[
+{"{", RowBox[{"2023", ",", " ", "11", ",", " ", "9"}], "}"}
+]
+}
+],
+"}"
+}
+]
+}
+]
+}
+],
+"Code"
+],
+Cell[
+BoxData[
+RowBox[
+{
+"With",
 "[",
-RowBox[{"$CovDFormat", ",", "\"Postfix\""}],
+RowBox[
+{
+RowBox[
+{
+"{",
+RowBox[
+{
+"xAct`TInvar`Private`TInvarSymbols",
+"=",
+RowBox[
+{
+"DeleteCases",
+"[",
+RowBox[
+{
+RowBox[
+{
+"Join",
+"[",
+RowBox[
+{
+RowBox[{"Names", "[", "\"xAct`TInvar`*\"", "]"}],
+",",
+RowBox[{"Names", "[", "\"xAct`TInvar`Private`*\"", "]"}]
+}
+],
 "]"
+}
+],
+",",
+RowBox[
+{
+"\"$Version\"",
+"|",
+"\"xAct`TInvar`$Version\"",
+"|",
+"\"$TInvarVersionExpected\"",
+"|",
+"\"xAct`TInvar`$xTensorVersionExpected\""
+}
+]
+}
+],
+"]"
+}
+]
+}
+],
+"}"
+}
+],
+",",
+"\n",
+"  ",
+RowBox[
+{
+RowBox[
+{
+"Unprotect",
+" ",
+"/@",
+" ",
+"xAct`TInvar`Private`TInvarSymbols"
+}
+],
+";",
+"\n",
+"  ",
+RowBox[
+{
+"Clear",
+" ",
+"/@",
+" ",
+"xAct`TInvar`Private`TInvarSymbols"
+}
+],
+";"
+}
+]
+}
+],
+"\n",
+"]"
+}
+]
+],
+"Code"
+],
+Cell[
+BoxData[
+RowBox[
+{
+RowBox[
+{
+"If",
+"[",
+RowBox[
+{
+RowBox[
+{
+RowBox[
+{
+"Unevaluated",
+"[",
+"xAct`xCore`Private`$LastPackage",
+"]"
+}
+],
+"===",
+"xAct`xCore`Private`$LastPackage"
+}
+],
+",",
+"\n",
+"  ",
+RowBox[
+{
+"xAct`xCore`Private`$LastPackage",
+"=",
+"\"xAct`TInvar`\""
+}
+]
+}
+],
+"]"
+}
+],
+";"
+}
+]
+],
+"Code"
+],
+Cell[
+BoxData[
+RowBox[
+{
+"BeginPackage",
+"[",
+RowBox[
+{
+"\"xAct`TInvar`\"",
+",",
+" ",
+RowBox[
+{
+"{",
+RowBox[
+{
+"\"xAct`xTensor`\"",
+",",
+" ",
+"\"xAct`xPerm`\"",
+",",
+" ",
+"\"xAct`xCore`\""
+}
+],
+"}"
+}
+]
+}
+],
+"]"
+}
+]
+],
+"Code"
+],
+Cell[
+TextData[
+{
+"Check version of ",
+StyleBox["xTensor", FontSlant -> "Italic"],
+". We simply compare dates:"
+}
+],
+"Text"
+],
+Cell[
+BoxData[
+{
+RowBox[
+{
+RowBox[
+{
+RowBox[{"General", "::", "xTensorVersion"}],
+"=",
+"\"Loaded xTensor version `1` but expected version `2` at least.\""
+}
+],
+";"
+}
+],
+"\n",
+RowBox[
+{
+"If",
+"[",
+RowBox[
+{
+RowBox[
+{
+"Not",
+"@",
+RowBox[
+{
+"OrderedQ",
+"@",
+RowBox[
+{
+"Map",
+"[",
+RowBox[
+{
+"Last",
+",",
+RowBox[
+{
+"{",
+RowBox[
+{"$xTensorVersionExpected", ",", "xAct`xTensor`$Version"}
+],
+"}"
+}
+]
+}
+],
+"]"
+}
+]
+}
+]
+}
+],
+",",
+RowBox[
+{
+RowBox[
+{
+"Message",
+"[",
+RowBox[
+{
+RowBox[{"General", "::", "xTensorVersion"}],
+",",
+"xAct`xTensor`$Version",
+",",
+"$xTensorVersionExpected"
+}
+],
+"]"
+}
+],
+";",
+"\[IndentingNewLine]",
+RowBox[{"Abort", "[", "]"}]
+}
+]
+}
+],
+"]"
+}
+]
+}
+],
+"Input",
+InitializationCell -> True
+],
+Cell[
+BoxData[
+{
+RowBox[
+{
+RowBox[{"Print", "[", "xAct`xCore`Private`bars", "]"}],
+";"
+}
+],
+"\n",
+RowBox[
+{
+RowBox[
+{
+"Print",
+"[",
+RowBox[
+{
+"\"Package xAct`TInvar`  version \"",
+",",
+RowBox[{"$Version", "[", RowBox[{"[", "1", "]"}], "]"}],
+",",
+"\", \"",
+",",
+RowBox[{"$Version", "[", RowBox[{"[", "2", "]"}], "]"}]
+}
+],
+"]"
+}
+],
+";"
+}
+],
+"\n",
+RowBox[
+{
+RowBox[
+{
+"Print",
+"[",
+"\"Copyright (C) 2023, Kevin Kiely, Barry Wardell, Adrian Ottewill and Jose M. Martin-Garcia.\"",
+"]"
+}
+],
+";"
+}
+]
+}
+],
+"Code"
+],
+Cell[
+"We specify the context xAct`TInvar` to avoid overriding the Disclaimer's of xTensor and xPerm. However we need to turn off the message General:shdw temporarily:",
+"Text"
+],
+Cell[
+BoxData[
+{
+RowBox[
+{"Off", "[", RowBox[{"General", "::", "shdw"}], "]"}
+],
+"\[IndentingNewLine]",
+RowBox[
+{
+RowBox[{"xAct`TInvar`Disclaimer", "[", "]"}],
+":=",
+RowBox[
+{
+"Print",
+"[",
+"\"These are points 11 and 12 of the General Public License:\\n\\nBECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM `AS IS\264 WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.\\n\\nIN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.\"",
+"]"
+}
+]
+}
+],
+"\[IndentingNewLine]",
+RowBox[{"On", "[", RowBox[{"General", "::", "shdw"}], "]"}]
+}
+],
+"Input",
+InitializationCell -> True
+],
+Cell[
+TextData[
+{
+"If ",
+StyleBox["Invar", FontSlant -> "Italic"],
+" is the last package begin read, print the GPL message:"
+}
+],
+"Text"
+],
+Cell[
+BoxData[
+RowBox[
+{
+"If",
+"[",
+RowBox[
+{
+RowBox[
+{
+"xAct`xCore`Private`$LastPackage",
+"===",
+"\"xAct`TInvar`\""
+}
+],
+",",
+"\[IndentingNewLine]",
+RowBox[
+{
+RowBox[
+{"Unset", "[", "xAct`xCore`Private`$LastPackage", "]"}
+],
+";",
+"\[IndentingNewLine]",
+RowBox[{"Print", "[", "xAct`xCore`Private`bars", "]"}],
+";",
+"\[IndentingNewLine]",
+RowBox[
+{
+"Print",
+"[",
+"\"These packages come with ABSOLUTELY NO WARRANTY; for details type Disclaimer[]. This is free software, and you are welcome to redistribute it under certain conditions. See the General Public License for details.\"",
+"]"
+}
+],
+";",
+"\[IndentingNewLine]",
+RowBox[{"Print", "[", "xAct`xCore`Private`bars", "]"}]
+}
+]
+}
+],
+"]"
+}
+]
+],
+"Input",
+InitializationCell -> True
+]
+},
+Closed
+]
+],
+Cell[
+CellGroupData[
+{
+Cell["Usage messages", "Section"],
+Cell[
+BoxData[
+RowBox[
+{
+RowBox[
+{
+RowBox[{"$TInvarDirectory", "::", "usage"}],
+"=",
+"\"$TInvarDirectory is a global variable giving the directory in which the package file and the database can be found.\""
+}
+],
+";"
+}
+]
+],
+"Input",
+InitializationCell -> True
+],
+Cell[
+BoxData[
+{
+RowBox[
+{
+RowBox[
+{
+RowBox[{"InvarCases", "::", "usage"}],
+"=",
+"\"InvarCases[s, d] returns the list of cases of order (number of metric derivatives) s and degree (number of Riemanns) d. InvarCases[s] returns the list of cases of order s. InvarCases[] returns the list of all cases handled by Invar (currently the 47 cases up to order 12 plus the algebraic case of degree 7).\""
 }
 ],
 ";"
@@ -161,10 +565,9 @@ RowBox[
 {
 RowBox[
 {
-"ReportSet",
-"[",
-RowBox[{"$PrePrint", ",", "ScreenDollarIndices"}],
-"]"
+RowBox[{"InvarDualCases", "::", "usage"}],
+"=",
+"\"InvarDualCases[s, d] returns the list of dual cases of order (number of metric derivatives) s and degree (number of Riemanns) d in dimension 4. InvarDualCases[s] returns the list of dual cases of order s. InvarDualCases[] returns the list of all dual cases handled by Invar (currently the 14 cases up to order 8 plus the algebraic case of degree 5).\""
 }
 ],
 ";"
@@ -172,78 +575,446 @@ RowBox[{"$PrePrint", ",", "ScreenDollarIndices"}],
 ]
 }
 ],
-"Input"
+"Input",
+InitializationCell -> True
+],
+Cell[
+BoxData[
+{
+RowBox[
+{
+RowBox[
+{
+RowBox[{"RInv", "::", "usage"}],
+"=",
+"\"RInv[g][c, r] denotes the Riemann invariant of case c and index r associated to the metric g.\""
+}
+],
+";"
+}
+],
+"\[IndentingNewLine]",
+RowBox[
+{
+RowBox[
+{
+RowBox[{"DualRInv", "::", "usage"}],
+"=",
+"\"DualRInv[g][c, r] denotes the dual Riemann invariant of case c and index r associated to the metric g.\""
+}
+],
+";"
+}
+],
+"\[IndentingNewLine]",
+RowBox[
+{
+RowBox[
+{
+RowBox[{"RPerm", "::", "usage"}],
+"=",
+"\"RPerm[g][{c, ed}, perm] denotes a Riemann invariant of case c with ed epsilon tensors (both associated to metric g), after reordering the indices from a canonical order using permutation perm.\""
+}
+],
+";"
+}
+]
+}
+],
+"Input",
+InitializationCell -> True
+],
+Cell[
+BoxData[
+{
+RowBox[
+{
+RowBox[
+{
+RowBox[{"WInv", "::", "usage"}],
+"=",
+"\"WInv[g][c, r] denotes the Weyl invariant of case c and index r associated to the metric g.\""
+}
+],
+";"
+}
+],
+"\[IndentingNewLine]",
+RowBox[
+{
+RowBox[
+{
+RowBox[{"DualWInv", "::", "usage"}],
+"=",
+"\"DualWInv[g][c, r] denotes the dual Weyl invariant of case c and index r associated to the metric g.\""
+}
+],
+";"
+}
+],
+"\[IndentingNewLine]",
+RowBox[
+{
+RowBox[
+{
+RowBox[{"WPerm", "::", "usage"}],
+"=",
+"\"WPermRPerm[g][{Rd, ed}, perm] denotes a Weyl invariant  formed by Rd Weyl tensors and ed epsilon tensors, after reordering the indices from a canonical order using permutation perm. Contracted Weyls encode the Traceless Ricci tensor.\""
+}
+],
+";"
+}
+]
+}
+],
+"Input",
+InitializationCell -> True
+],
+Cell[
+BoxData[
+{
+RowBox[
+{
+RowBox[
+{
+RowBox[{"RInvs", "::", "usage"}],
+"=",
+"\"RInvs[step, case] gives all independent Riemann invariants at the given step (1, 2, 3, 4, 5 or 6) and the given case. Using RInvs[g] instead of RInvs we get the particularization of the invariants to metric g.\""
+}
+],
+";"
+}
+],
+"\[IndentingNewLine]",
+RowBox[
+{
+RowBox[
+{
+RowBox[{"WInvs", "::", "usage"}],
+"=",
+"\"WInvs[step, case] gives all independent Weyl invariants at the given step (1, 2, 3, 4, 5, 6) and the given case. Using WInvs[g] instead of WInvs we get the particularization of the invariants to metric g.\""
+}
+],
+";"
+}
+],
+"\[IndentingNewLine]",
+RowBox[
+{
+RowBox[
+{
+RowBox[{"DualRInvs", "::", "usage"}],
+"=",
+"\"DualRInvs[step, case] gives all independent dual Riemann invariants at the given step (1, 2, 3, 4, 5 or 6) and the given case. Using DualRInvs[g] instead of RInvs we get the particularization of the dual invariants to metric g.\""
+}
+],
+";"
+}
+],
+"\[IndentingNewLine]",
+RowBox[
+{
+RowBox[
+{
+RowBox[{"DualWInvs", "::", "usage"}],
+"=",
+"\"DualWInvs[step, case] gives all independent dual Weyl invariants at the given step (1, 2, 3, 4, 5 or 6) and the given case. Using DualWInvs[g] instead of WInvs we get the particularization of the dual invariants to metric g.\""
+}
+],
+";"
+}
+],
+"\[IndentingNewLine]",
+RowBox[
+{
+RowBox[
+{
+RowBox[{"RInvRules", "::", "usage"}],
+"=",
+"\"RInvRules[step, case] gives the list of rules to be used to simplify Riemann non-dual invariants of the given case at the given step.\""
+}
+],
+";"
+}
+],
+"\[IndentingNewLine]",
+RowBox[
+{
+RowBox[
+{
+RowBox[{"WInvRules", "::", "usage"}],
+"=",
+"\"WInvRules[step, case] gives the list of rules to be used to simplify Weyl non-dual invariants of the given case at the given step.\""
+}
+],
+";"
+}
+],
+"\[IndentingNewLine]",
+RowBox[
+{
+RowBox[
+{
+RowBox[{"DualRInvRules", "::", "usage"}],
+"=",
+"\"DualRInvRules[step, case] gives the list of rules to be used to simplify Riemann dual invariants of the given case at the given step.\""
+}
+],
+";"
+}
+],
+"\[IndentingNewLine]",
+RowBox[
+{
+RowBox[
+{
+RowBox[{"DualWInvRules", "::", "usage"}],
+"=",
+"\"DualWInvRules[step, case] gives the list of rules to be used to simplify Weyl dual invariants of the given case at the given step.\""
+}
+],
+";"
+}
+]
+}
+],
+"Input",
+InitializationCell -> True
+],
+Cell[
+BoxData[
+{
+RowBox[
+{
+RowBox[
+{
+RowBox[{"MaxIndex", "::", "usage"}],
+"=",
+"\"MaxIndex[step] gives the largest index of the non-dual invariants at the given step.\""
+}
+],
+";"
+}
+],
+"\[IndentingNewLine]",
+RowBox[
+{
+RowBox[
+{
+RowBox[{"MaxDualIndex", "::", "usage"}],
+"=",
+"\"MaxDualIndex[step] gives the largest index of the dual invariants at the given step.\""
+}
+],
+";"
+}
+]
+}
+],
+"Input",
+InitializationCell -> True
+],
+Cell[
+BoxData[
+{
+RowBox[
+{
+RowBox[
+{
+RowBox[{"InvSimplify", "::", "usage"}],
+"=",
+"\"InvSimplify[expr, level] simplifies the invariants of the form inv[metric][case,count] in the expression expr, where inv is one of RInv, DualRInv, WInv, DualWInv. There are six possible levels of simplification: 1 means no simplification; 2 uses the cyclic identity; 3 uses the Bianchi identity; 4 commutes covariant derivatives; 5 uses dimensionally dependent (Lovelock type) identities and 6 reduces some non-dual invariants into products of dual invariants. The default level used in InvSimplify[expr] is $InvSimplifyLevel.\""
+}
+],
+";"
+}
+],
+"\[IndentingNewLine]",
+RowBox[
+{
+RowBox[
+{
+RowBox[{"InvToPerm", "::", "usage"}],
+"=",
+"\"InvToPerm[expr] converts all invariants in expr into their corresponding permutations with head RPerm or WPerm.\""
+}
+],
+";"
+}
+],
+"\[IndentingNewLine]",
+RowBox[
+{
+RowBox[
+{
+RowBox[{"PermToRiemann", "::", "usage"}],
+"=",
+"\"PermToRiemann[expr, cr] converts all permutations into their explicit tensor expressions. With cr=True contracted Riemann tensors are replaced by Ricci tensors. The default value used in PermToRiemann[expr] is $CurvatureRelations.\""
+}
+],
+";"
+}
+],
+"\[IndentingNewLine]",
+RowBox[
+{
+RowBox[
+{
+RowBox[{"InvToRiemann", "::", "usage"}],
+"=",
+"\"InvToRiemann[expr, cr] converts all invariants into their explicit tensor expressions. With cr=True contracted Riemann tensors are replaced by Ricci tensors. The default value used in InvToRiemann[expr] is $CurvatureRelations.\""
+}
+],
+";"
+}
+],
+"\[IndentingNewLine]",
+RowBox[
+{
+RowBox[
+{
+RowBox[{"RiemannToPerm", "::", "usage"}],
+"=",
+"\"RiemannToPerm[expr, g] converts all Riemann scalars of metric g into their canonical permutations. If g is a list of metrics then the command is folded over the list. RiemannToPerm[expr] is automatically converted into RiemannToPerm[expr, $Metrics].\""
+}
+],
+";"
+}
+],
+"\[IndentingNewLine]",
+RowBox[
+{
+RowBox[
+{
+RowBox[{"PermToInv", "::", "usage"}],
+"=",
+"\"PermToInv[expr] converts all permutations in expr into their correspondent invariants. It is assumed that the permutations have been already canonicalized.\""
+}
+],
+";"
+}
+],
+"\[IndentingNewLine]",
+RowBox[
+{
+RowBox[
+{
+RowBox[{"RiemannToInv", "::", "usage"}],
+"=",
+"\"RiemannToInv[expr, g] converts all Riemann scalars of metric g into their invariant form. If g is a list of metrics then the command is folded over the list. RiemannToInv[expr] is automatically converted into RiemannToInv[expr, $Metrics].\""
+}
+],
+";"
+}
+],
+"\[IndentingNewLine]",
+RowBox[
+{
+RowBox[
+{
+RowBox[{"RiemannSimplify", "::", "usage"}],
+"=",
+"\"RiemannSimplify[expr, level, cr, g] simplifies the Riemann scalars of metric g using relations up to the given level (see usage message for InvSimplify). With cr=True contracted Riemann tensors are replaced by Ricci tensors. If g is a list of metrics then the command is folded over the list. RiemannSimplify[expr] uses the defaults $InvSimplifyLevel, $CurvatureRelations and $Metrics, respectively. See usage messages for those global variables.\""
+}
+],
+";"
+}
+]
+}
+],
+"Input",
+InitializationCell -> True
+],
+Cell[
+BoxData[
+{
+RowBox[
+{
+RowBox[
+{
+RowBox[{"dim", "::", "usage"}],
+"=",
+"\"dim is a constant symbol used in the Invar rules to denote the dimension of a manifold.\""
+}
+],
+";"
+}
+],
+"\[IndentingNewLine]",
+RowBox[
+{
+RowBox[
+{
+RowBox[{"sigma", "::", "usage"}],
+"=",
+"\"sigma is a constant symbol used in the Invar rules to denote the sign of the determinant of a metric.\""
+}
+],
+";"
+}
+]
+}
+],
+"Input",
+InitializationCell -> True
+],
+Cell[
+BoxData[
+{
+RowBox[
+{
+RowBox[
+{
+RowBox[{"$InvSimplifyLevel", "::", "usage"}],
+"=",
+"\"$InvSimplifyLevel is a global variable specifying the default level of simplification in InvSimplify. Initially it is set to 6.\""
+}
+],
+";"
+}
+],
+"\[IndentingNewLine]",
+RowBox[
+{
+RowBox[
+{
+RowBox[{"$CurvatureRelations", "::", "usage"}],
+"=",
+"\"$CurvatureRelations is a global variable specifying the default behaviour of contracted Riemann conversion in the functions PermToRiemann, InvToRiemann and RiemannSimplify.\""
+}
+],
+";"
+}
+]
+}
+],
+"Input",
+InitializationCell -> True
+]
+},
+Closed
+]
 ],
 Cell[
 CellGroupData[
 {
+Cell["Begin Private part of package", "Section"],
 Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"** Variable \"",
-"\[InvisibleSpace]",
-"$CovDFormat",
-"\[InvisibleSpace]",
-"\" changed from \"",
-"\[InvisibleSpace]",
-"\"Prefix\"",
-"\[InvisibleSpace]",
-"\" to \"",
-"\[InvisibleSpace]",
-"\"Postfix\""
-}
-],
-SequenceForm[
-"** Variable ",
-xAct`xTensor`$CovDFormat,
-" changed from ",
-"Prefix",
-" to ",
-"Postfix"
-],
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"** Variable \"",
-"\[InvisibleSpace]",
-"$PrePrint",
-"\[InvisibleSpace]",
-"\" assigned value \"",
-"\[InvisibleSpace]",
-"ScreenDollarIndices"
-}
-],
-SequenceForm[
-"** Variable ",
-$PrePrint,
-" assigned value ",
-xAct`xTensor`ScreenDollarIndices
-],
-Editable -> False
-]
-],
-"Print"
+BoxData[RowBox[{"Begin", "[", "\"`Private`\"", "]"}]],
+"Code"
 ]
 },
-Open
-]
-]
-},
-Open
+Closed
 ]
 ],
 Cell[
 CellGroupData[
 {
+Cell["Main setup", "Section"],
+Cell[
+CellGroupData[
+{
+Cell["Set options", "Subsection"],
 Cell[
 BoxData[
 RowBox[
@@ -266,1063 +1037,7 @@ RowBox[{"AllowUpperDerivatives", "\[Rule]", "True"}]
 }
 ]
 ],
-"Input"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"** Option \"",
-"\[InvisibleSpace]",
-"AllowUpperDerivatives",
-"\[InvisibleSpace]",
-"\" of \"",
-"\[InvisibleSpace]",
-"ContractMetric",
-"\[InvisibleSpace]",
-"\" changed from \"",
-"\[InvisibleSpace]",
-"False",
-"\[InvisibleSpace]",
-"\" to \"",
-"\[InvisibleSpace]",
-"True"
-}
-],
-SequenceForm[
-"** Option ",
-xAct`xTensor`AllowUpperDerivatives,
-" of ",
-xAct`xTensor`ContractMetric,
-" changed from ",
-False,
-" to ",
-True
-],
-Editable -> False
-]
-],
-"Print"
-]
-},
-Open
-]
-],
-Cell[
-BoxData[
-RowBox[
-{
-"\[IndentingNewLine]",
-RowBox[
-{
-RowBox[
-{
-RowBox[
-{
-"FreeIndices",
-" ",
-"=",
-" ",
-RowBox[
-{"IndexRange", "[", RowBox[{"a", ",", " ", "z"}], "]"}
-]
-}
-],
-";"
-}
-],
-"\n",
-RowBox[
-{
-RowBox[
-{
-"SigmaIndices",
-" ",
-"=",
-" ",
-RowBox[
-{
-"RotateLeft",
-"[",
-RowBox[
-{
-"IndexRange",
-"[",
-RowBox[{"\[Alpha]", ",", " ", "\[Nu]"}],
-"]"
-}
-],
-"]"
-}
-]
-}
-],
-";"
-}
-],
-" "
-}
-]
-}
-]
-],
-"Input"
-],
-Cell[
-CellGroupData[
-{
-Cell[
-BoxData[
-RowBox[
-{
-RowBox[
-{
-"DefManifold",
-"[",
-RowBox[{"M", ",", " ", "4", ",", " ", "FreeIndices"}],
-"]"
-}
-],
-";"
-}
-]
-],
-"Input"
-],
-Cell[
-CellGroupData[
-{
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"** \"",
-"\[InvisibleSpace]",
-"DefManifold",
-"\[InvisibleSpace]",
-"\": Defining \"",
-"\[InvisibleSpace]",
-"\"manifold \"",
-"\[InvisibleSpace]",
-"M",
-"\[InvisibleSpace]",
-"\". \"",
-"\[InvisibleSpace]",
-"\"\""
-}
-],
-SequenceForm[
-"** ",
-xAct`xTensor`DefManifold,
-": Defining ",
-"manifold ",
-M,
-". ",
-""
-],
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"** \"",
-"\[InvisibleSpace]",
-"DefVBundle",
-"\[InvisibleSpace]",
-"\": Defining \"",
-"\[InvisibleSpace]",
-"\"vbundle \"",
-"\[InvisibleSpace]",
-"TangentM",
-"\[InvisibleSpace]",
-"\". \"",
-"\[InvisibleSpace]",
-"\"\""
-}
-],
-SequenceForm[
-"** ",
-xAct`xTensor`DefVBundle,
-": Defining ",
-"vbundle ",
-TangentM,
-". ",
-""
-],
-Editable -> False
-]
-],
-"Print"
-]
-},
-Open
-]
-]
-},
-Open
-]
-],
-Cell[
-CellGroupData[
-{
-Cell[
-BoxData[
-RowBox[
-{
-RowBox[
-{
-"DefMetric",
-"[",
-RowBox[
-{
-RowBox[{"-", "1"}],
-",",
-" ",
-RowBox[
-{
-"metric",
-"[",
-RowBox[{RowBox[{"-", "a"}], ",", " ", RowBox[{"-", "b"}]}],
-"]"
-}
-],
-",",
-" ",
-"CD",
-",",
-" ",
-RowBox[
-{"{", RowBox[{"\";\"", ",", " ", "\"\[Del]\""}], "}"}
-],
-",",
-" ",
-RowBox[{"CurvatureRelations", " ", "->", " ", "False"}]
-}
-],
-"]"
-}
-],
-";"
-}
-]
-],
-"Input"
-],
-Cell[
-CellGroupData[
-{
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"** \"",
-"\[InvisibleSpace]",
-"DefTensor",
-"\[InvisibleSpace]",
-"\": Defining \"",
-"\[InvisibleSpace]",
-"\"symmetric metric tensor \"",
-"\[InvisibleSpace]",
-RowBox[
-{
-"metric",
-"[",
-RowBox[{RowBox[{"-", "a"}], ",", RowBox[{"-", "b"}]}],
-"]"
-}
-],
-"\[InvisibleSpace]",
-"\". \"",
-"\[InvisibleSpace]",
-"\"\""
-}
-],
-SequenceForm[
-"** ",
-xAct`xTensor`DefTensor,
-": Defining ",
-"symmetric metric tensor ",
-metric[-a, -b],
-". ",
-""
-],
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"** \"",
-"\[InvisibleSpace]",
-"DefTensor",
-"\[InvisibleSpace]",
-"\": Defining \"",
-"\[InvisibleSpace]",
-"\"antisymmetric tensor \"",
-"\[InvisibleSpace]",
-RowBox[
-{
-"epsilonmetric",
-"[",
-RowBox[
-{
-RowBox[{"-", "a"}],
-",",
-RowBox[{"-", "b"}],
-",",
-RowBox[{"-", "c"}],
-",",
-RowBox[{"-", "d"}]
-}
-],
-"]"
-}
-],
-"\[InvisibleSpace]",
-"\". \"",
-"\[InvisibleSpace]",
-"\"\""
-}
-],
-SequenceForm[
-"** ",
-xAct`xTensor`DefTensor,
-": Defining ",
-"antisymmetric tensor ",
-epsilonmetric[-a, -b, -c, -d],
-". ",
-""
-],
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"** \"",
-"\[InvisibleSpace]",
-"DefTensor",
-"\[InvisibleSpace]",
-"\": Defining \"",
-"\[InvisibleSpace]",
-"\"tetrametric \"",
-"\[InvisibleSpace]",
-RowBox[
-{
-"Tetrametric",
-"[",
-RowBox[
-{
-RowBox[{"-", "a"}],
-",",
-RowBox[{"-", "b"}],
-",",
-RowBox[{"-", "c"}],
-",",
-RowBox[{"-", "d"}]
-}
-],
-"]"
-}
-],
-"\[InvisibleSpace]",
-"\". \"",
-"\[InvisibleSpace]",
-"\"\""
-}
-],
-SequenceForm[
-"** ",
-xAct`xTensor`DefTensor,
-": Defining ",
-"tetrametric ",
-Tetrametric[-a, -b, -c, -d],
-". ",
-""
-],
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"** \"",
-"\[InvisibleSpace]",
-"DefTensor",
-"\[InvisibleSpace]",
-"\": Defining \"",
-"\[InvisibleSpace]",
-"\"tetrametric \"",
-"\[InvisibleSpace]",
-RowBox[
-{
-"Tetrametric\[Dagger]",
-"[",
-RowBox[
-{
-RowBox[{"-", "a"}],
-",",
-RowBox[{"-", "b"}],
-",",
-RowBox[{"-", "c"}],
-",",
-RowBox[{"-", "d"}]
-}
-],
-"]"
-}
-],
-"\[InvisibleSpace]",
-"\". \"",
-"\[InvisibleSpace]",
-"\"\""
-}
-],
-SequenceForm[
-"** ",
-xAct`xTensor`DefTensor,
-": Defining ",
-"tetrametric ",
-Tetrametric\[Dagger][-a, -b, -c, -d],
-". ",
-""
-],
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"** \"",
-"\[InvisibleSpace]",
-"DefCovD",
-"\[InvisibleSpace]",
-"\": Defining \"",
-"\[InvisibleSpace]",
-"\"covariant derivative \"",
-"\[InvisibleSpace]",
-RowBox[{"CD", "[", RowBox[{"-", "a"}], "]"}],
-"\[InvisibleSpace]",
-"\". \"",
-"\[InvisibleSpace]",
-"\"\""
-}
-],
-SequenceForm[
-"** ",
-xAct`xTensor`DefCovD,
-": Defining ",
-"covariant derivative ",
-CD[-a],
-". ",
-""
-],
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"** \"",
-"\[InvisibleSpace]",
-"DefTensor",
-"\[InvisibleSpace]",
-"\": Defining \"",
-"\[InvisibleSpace]",
-"\"vanishing torsion tensor \"",
-"\[InvisibleSpace]",
-RowBox[
-{
-"TorsionCD",
-"[",
-RowBox[
-{"a", ",", RowBox[{"-", "b"}], ",", RowBox[{"-", "c"}]}
-],
-"]"
-}
-],
-"\[InvisibleSpace]",
-"\". \"",
-"\[InvisibleSpace]",
-"\"\""
-}
-],
-SequenceForm[
-"** ",
-xAct`xTensor`DefTensor,
-": Defining ",
-"vanishing torsion tensor ",
-TorsionCD[a, -b, -c],
-". ",
-""
-],
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"** \"",
-"\[InvisibleSpace]",
-"DefTensor",
-"\[InvisibleSpace]",
-"\": Defining \"",
-"\[InvisibleSpace]",
-"\"symmetric Christoffel tensor \"",
-"\[InvisibleSpace]",
-RowBox[
-{
-"ChristoffelCD",
-"[",
-RowBox[
-{"a", ",", RowBox[{"-", "b"}], ",", RowBox[{"-", "c"}]}
-],
-"]"
-}
-],
-"\[InvisibleSpace]",
-"\". \"",
-"\[InvisibleSpace]",
-"\"\""
-}
-],
-SequenceForm[
-"** ",
-xAct`xTensor`DefTensor,
-": Defining ",
-"symmetric Christoffel tensor ",
-ChristoffelCD[a, -b, -c],
-". ",
-""
-],
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"** \"",
-"\[InvisibleSpace]",
-"DefTensor",
-"\[InvisibleSpace]",
-"\": Defining \"",
-"\[InvisibleSpace]",
-"\"Riemann tensor \"",
-"\[InvisibleSpace]",
-RowBox[
-{
-"RiemannCD",
-"[",
-RowBox[
-{
-RowBox[{"-", "a"}],
-",",
-RowBox[{"-", "b"}],
-",",
-RowBox[{"-", "c"}],
-",",
-RowBox[{"-", "d"}]
-}
-],
-"]"
-}
-],
-"\[InvisibleSpace]",
-"\". \"",
-"\[InvisibleSpace]",
-"\"\""
-}
-],
-SequenceForm[
-"** ",
-xAct`xTensor`DefTensor,
-": Defining ",
-"Riemann tensor ",
-RiemannCD[-a, -b, -c, -d],
-". ",
-""
-],
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"** \"",
-"\[InvisibleSpace]",
-"DefTensor",
-"\[InvisibleSpace]",
-"\": Defining \"",
-"\[InvisibleSpace]",
-"\"symmetric Ricci tensor \"",
-"\[InvisibleSpace]",
-RowBox[
-{
-"RicciCD",
-"[",
-RowBox[{RowBox[{"-", "a"}], ",", RowBox[{"-", "b"}]}],
-"]"
-}
-],
-"\[InvisibleSpace]",
-"\". \"",
-"\[InvisibleSpace]",
-"\"\""
-}
-],
-SequenceForm[
-"** ",
-xAct`xTensor`DefTensor,
-": Defining ",
-"symmetric Ricci tensor ",
-RicciCD[-a, -b],
-". ",
-""
-],
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"** \"",
-"\[InvisibleSpace]",
-"DefTensor",
-"\[InvisibleSpace]",
-"\": Defining \"",
-"\[InvisibleSpace]",
-"\"Ricci scalar \"",
-"\[InvisibleSpace]",
-RowBox[{"RicciScalarCD", "[", "]"}],
-"\[InvisibleSpace]",
-"\". \"",
-"\[InvisibleSpace]",
-"\"\""
-}
-],
-SequenceForm[
-"** ",
-xAct`xTensor`DefTensor,
-": Defining ",
-"Ricci scalar ",
-RicciScalarCD[],
-". ",
-""
-],
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"** \"",
-"\[InvisibleSpace]",
-"DefTensor",
-"\[InvisibleSpace]",
-"\": Defining \"",
-"\[InvisibleSpace]",
-"\"symmetric Einstein tensor \"",
-"\[InvisibleSpace]",
-RowBox[
-{
-"EinsteinCD",
-"[",
-RowBox[{RowBox[{"-", "a"}], ",", RowBox[{"-", "b"}]}],
-"]"
-}
-],
-"\[InvisibleSpace]",
-"\". \"",
-"\[InvisibleSpace]",
-"\"\""
-}
-],
-SequenceForm[
-"** ",
-xAct`xTensor`DefTensor,
-": Defining ",
-"symmetric Einstein tensor ",
-EinsteinCD[-a, -b],
-". ",
-""
-],
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"** \"",
-"\[InvisibleSpace]",
-"DefTensor",
-"\[InvisibleSpace]",
-"\": Defining \"",
-"\[InvisibleSpace]",
-"\"Weyl tensor \"",
-"\[InvisibleSpace]",
-RowBox[
-{
-"WeylCD",
-"[",
-RowBox[
-{
-RowBox[{"-", "a"}],
-",",
-RowBox[{"-", "b"}],
-",",
-RowBox[{"-", "c"}],
-",",
-RowBox[{"-", "d"}]
-}
-],
-"]"
-}
-],
-"\[InvisibleSpace]",
-"\". \"",
-"\[InvisibleSpace]",
-"\"\""
-}
-],
-SequenceForm[
-"** ",
-xAct`xTensor`DefTensor,
-": Defining ",
-"Weyl tensor ",
-WeylCD[-a, -b, -c, -d],
-". ",
-""
-],
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"** \"",
-"\[InvisibleSpace]",
-"DefTensor",
-"\[InvisibleSpace]",
-"\": Defining \"",
-"\[InvisibleSpace]",
-"\"symmetric TFRicci tensor \"",
-"\[InvisibleSpace]",
-RowBox[
-{
-"TFRicciCD",
-"[",
-RowBox[{RowBox[{"-", "a"}], ",", RowBox[{"-", "b"}]}],
-"]"
-}
-],
-"\[InvisibleSpace]",
-"\". \"",
-"\[InvisibleSpace]",
-"\"\""
-}
-],
-SequenceForm[
-"** ",
-xAct`xTensor`DefTensor,
-": Defining ",
-"symmetric TFRicci tensor ",
-TFRicciCD[-a, -b],
-". ",
-""
-],
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"** \"",
-"\[InvisibleSpace]",
-"DefTensor",
-"\[InvisibleSpace]",
-"\": Defining \"",
-"\[InvisibleSpace]",
-"\"Kretschmann scalar \"",
-"\[InvisibleSpace]",
-RowBox[{"KretschmannCD", "[", "]"}],
-"\[InvisibleSpace]",
-"\". \"",
-"\[InvisibleSpace]",
-"\"\""
-}
-],
-SequenceForm[
-"** ",
-xAct`xTensor`DefTensor,
-": Defining ",
-"Kretschmann scalar ",
-KretschmannCD[],
-". ",
-""
-],
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"** DefCovD:  Computing RiemannToWeylRules for dim \"",
-"\[InvisibleSpace]",
-"4"
-}
-],
-"** DefCovD:  Computing RiemannToWeylRules for dim "4,
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"** DefCovD:  Computing RicciToTFRicci for dim \"",
-"\[InvisibleSpace]",
-"4"
-}
-],
-"** DefCovD:  Computing RicciToTFRicci for dim "4,
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"** DefCovD:  Computing RicciToEinsteinRules for dim \"",
-"\[InvisibleSpace]",
-"4"
-}
-],
-"** DefCovD:  Computing RicciToEinsteinRules for dim "4,
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"** \"",
-"\[InvisibleSpace]",
-"DefTensor",
-"\[InvisibleSpace]",
-"\": Defining \"",
-"\[InvisibleSpace]",
-"\"weight +2 density \"",
-"\[InvisibleSpace]",
-RowBox[{"Detmetric", "[", "]"}],
-"\[InvisibleSpace]",
-"\". \"",
-"\[InvisibleSpace]",
-"\"Determinant.\""
-}
-],
-SequenceForm[
-"** ",
-xAct`xTensor`DefTensor,
-": Defining ",
-"weight +2 density ",
-Detmetric[],
-". ",
-"Determinant."
-],
-Editable -> False
-]
-],
-"Print"
-]
-},
-Open
-]
-]
-},
-Open
-]
-],
-Cell[
-BoxData[
-{
-RowBox[
-{
-RowBox[
-{
-RowBox[{"PrintAs", "[", "metric", "]"}],
-" ",
-"^=",
-" ",
-"\"g\""
-}
-],
-";"
-}
-],
-"\n",
-RowBox[
-{
-RowBox[
-{
-RowBox[{"PrintAs", "[", "epsilonmetric", "]"}],
-" ",
-"^=",
-" ",
-"\"\[Epsilon]\""
-}
-],
-";"
-}
-],
-"\n",
-RowBox[
-{
-RowBox[
-{
-RowBox[{"PrintAs", "[", "RiemannCD", "]"}],
-" ",
-"^=",
-" ",
-"\"R\""
-}
-],
-";"
-}
-],
-"\n",
-RowBox[
-{
-RowBox[
-{
-RowBox[{"PrintAs", "[", "RicciCD", "]"}],
-" ",
-"^=",
-" ",
-"\"R\""
-}
-],
-";"
-}
-],
-"\n",
-RowBox[
-{
-RowBox[
-{
-RowBox[{"PrintAs", "[", "RicciScalarCD", "]"}],
-" ",
-"^=",
-" ",
-"\"R\""
-}
-],
-";"
-}
-]
-}
-],
-"Input"
-],
-Cell[
-CellGroupData[
-{
-Cell["Main setup", "Subsection"],
-Cell[
-BoxData[
-RowBox[
-{
-RowBox[
-{
-"ReportSetOption",
-"[",
-RowBox[
-{
-"ContractMetric",
-",",
-RowBox[{"AllowUpperDerivatives", "\[Rule]", "True"}]
-}
-],
-"]"
-}
-],
-";"
-}
-]
-],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -1334,7 +1049,7 @@ RowBox[
 ]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -1352,7 +1067,7 @@ RowBox[{"$PrePrint", ",", "ScreenDollarIndices"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -1370,11 +1085,8 @@ RowBox[{"$CovDFormat", ",", "\"Postfix\""}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
-Cell[
-CellGroupData[
-{
 Cell[
 BoxData[
 RowBox[
@@ -1397,49 +1109,16 @@ RowBox[{"CurvatureRelations", "\[Rule]", "False"}]
 }
 ]
 ],
-"Input"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"** Option \"",
-"\[InvisibleSpace]",
-"CurvatureRelations",
-"\[InvisibleSpace]",
-"\" of \"",
-"\[InvisibleSpace]",
-"DefCovD",
-"\[InvisibleSpace]",
-"\" changed from \"",
-"\[InvisibleSpace]",
-"True",
-"\[InvisibleSpace]",
-"\" to \"",
-"\[InvisibleSpace]",
-"False"
-}
-],
-SequenceForm[
-"** Option ",
-xAct`xTensor`CurvatureRelations,
-" of ",
-xAct`xTensor`DefCovD,
-" changed from ",
-True,
-" to ",
-False
-],
-Editable -> False
-]
-],
-"Print"
+"Code"
 ]
 },
-Open
+Closed
 ]
 ],
+Cell[
+CellGroupData[
+{
+Cell["Formatting of invariants", "Subsection"],
 Cell[
 BoxData[
 RowBox[
@@ -1462,7 +1141,7 @@ RowBox[{"ToString", "/@", "list"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -1525,7 +1204,7 @@ RowBox[{"indices", ".", " ", "No"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -1667,7 +1346,7 @@ RowBox[{"0", ",", "case", ",", "index"}],
 ]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -1786,11 +1465,10 @@ RowBox[{"0", ",", "case", ",", "index"}],
 ],
 ";"
 }
-],
-"\[IndentingNewLine]"
+]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -1855,7 +1533,7 @@ RowBox[{"ToString", "[", "index", "]"}]
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -1920,7 +1598,7 @@ RowBox[{"ToString", "[", "index", "]"}]
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -1985,7 +1663,7 @@ RowBox[{"ToString", "[", "index", "]"}]
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -2050,9 +1728,8 @@ RowBox[{"ToString", "[", "index", "]"}]
 }
 ]
 ],
-"Input"
+"Code"
 ],
-Cell[BoxData[""], "Input"],
 Cell[
 BoxData[
 RowBox[
@@ -2116,7 +1793,7 @@ RowBox[{"ToString", "[", "index", "]"}]
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -2181,7 +1858,7 @@ RowBox[{"ToString", "[", "index", "]"}]
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -2246,7 +1923,7 @@ RowBox[{"ToString", "[", "index", "]"}]
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -2311,36 +1988,43 @@ RowBox[{"ToString", "[", "index", "]"}]
 }
 ]
 ],
-"Input"
-],
-Cell[
-BoxData[RowBox[{RowBox[{"$ReadWeyl", "=", "False"}], ";"}]],
-"Input"
+"Code"
+]
+},
+Closed
+]
 ],
 Cell[
 CellGroupData[
 {
+Cell["Reading Invar files as rules", "Subsection"],
+Cell[
+BoxData[RowBox[{RowBox[{"$ReadWeyl", "=", "False"}], ";"}]],
+"Code"
+],
 Cell[
 BoxData[
 RowBox[
 {
+RowBox[
+{
 "$TInvarDirectory",
 "=",
-RowBox[{"NotebookDirectory", "[", "]"}]
+RowBox[
+{
+"ParentDirectory",
+"[",
+RowBox[{"DirectoryName", "[", "$InputFileName", "]"}],
+"]"
+}
+]
+}
+],
+";"
 }
 ]
 ],
-"Input"
-],
-Cell[
-BoxData[
-"\"/Users/kevinkiely/Mathematica/TInvarGit/TInvar/\""
-],
-"Output"
-]
-},
-Open
-]
+"Code"
 ],
 Cell[
 BoxData[
@@ -2348,7 +2032,7 @@ RowBox[
 {RowBox[{"$DataBaseDir", "=", "\"Riemann/\""}], ";"}
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -2376,7 +2060,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -2402,7 +2086,7 @@ RowBox[{"Weyl", ".", " ", "No"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -2439,7 +2123,7 @@ RowBox[{"RInv", "\[Rule]", "WInv"}]
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -2451,7 +2135,7 @@ RowBox[{"No", " ", "change", " ", "from", " ", "Invar"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -2536,7 +2220,7 @@ RowBox[{"Evaluate", "[", "prot", "]"}],
 ]
 }
 ],
-"Input"
+"Code"
 ]
 },
 Closed
@@ -2552,7 +2236,7 @@ RowBox[
 {"(*", RowBox[{"Same", " ", "as", " ", "Invar"}], "*)"}
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -2603,7 +2287,7 @@ RowBox[{"2", ",", RowBox[{"Length", "[", "case", "]"}]}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -2638,9 +2322,8 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
-Cell[BoxData[""], "Input"],
 Cell[
 BoxData[
 RowBox[
@@ -2684,13 +2367,10 @@ RowBox[{"ToString", "[", "step", "]"}]
 }
 ]
 ],
-"Input"
+"Code"
 ],
-Cell[BoxData[""], "Input"],
 Cell[
 BoxData[
-RowBox[
-{
 RowBox[
 {
 RowBox[
@@ -2744,12 +2424,9 @@ RowBox[{"ToString", "[", "dim", "]"}]
 ],
 ";"
 }
-],
-"\[IndentingNewLine]"
-}
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -2831,59 +2508,7 @@ RowBox[{"ToString", "[", "step", "]"}]
 ]
 }
 ],
-"Input"
-],
-Cell[
-CellGroupData[
-{
-Cell[
-BoxData[
-RowBox[
-{
-"dualfilename",
-"[",
-RowBox[
-{
-"5",
-",",
-"0",
-",",
-RowBox[{"{", RowBox[{"0", ",", "0", ",", "0"}], "}"}],
-",",
-"4"
-}
-],
-"]"
-}
-]
-],
-"Input"
-],
-Cell[BoxData["\"DInv-0-0_0_0-5_4\""], "Output"]
-},
-Open
-]
-],
-Cell[
-CellGroupData[
-{
-Cell[
-BoxData[
-RowBox[
-{
-"intercase",
-"[",
-RowBox[{"{", RowBox[{"0", ",", "0", ",", "0"}], "}"}],
-"]"
-}
-]
-],
-"Input"
-],
-Cell[BoxData["\"0_0_0\""], "Output"]
-},
-Open
-]
+"Code"
 ]
 },
 Closed
@@ -2897,7 +2522,7 @@ Cell[
 BoxData[
 RowBox[{"(*", RowBox[{"No", " ", "changes"}], "*)"}]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -2963,7 +2588,7 @@ RowBox[{"Import", "::", "nffil"}]
 ]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -2989,7 +2614,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ]
 },
 Closed
@@ -3075,7 +2700,7 @@ RowBox[
 ]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -3134,7 +2759,7 @@ RowBox[{"x", "+", "4"}]
 ]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -3194,7 +2819,7 @@ RowBox[{"{", RowBox[{"\"=\"", "\[Rule]", "\"->\""}], "}"}]
 ]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -3246,7 +2871,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -3274,7 +2899,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -3336,7 +2961,7 @@ RowBox[{"$TInvarDirectory", ",", "\"/\"", ",", "filename"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -3386,7 +3011,7 @@ RowBox[{"$TInvarDirectory", ",", "filename"}],
 }
 ]
 ],
-"Input"
+"Code"
 ]
 },
 Closed
@@ -3428,7 +3053,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ]
 },
 Closed
@@ -3462,7 +3087,7 @@ RowBox[{"this", ".", " ", "No"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -3556,7 +3181,7 @@ RowBox[{"DualWInv", "[", "metric", "]"}]
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -3625,7 +3250,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -3695,7 +3320,7 @@ RowBox[{"DualWInv", "[", "metric", "]"}]
 ]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -3724,7 +3349,7 @@ RowBox[{"First", "@", "$Metrics"}]
 }
 ]
 ],
-"Input"
+"Code"
 ]
 },
 Closed
@@ -3806,14 +3431,10 @@ RowBox[{"rank_", ",", " ", "order_", ",", "deg_"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
-RowBox[
-{
-"\[IndentingNewLine]",
-RowBox[
 {
 RowBox[
 {
@@ -4296,6 +3917,8 @@ RowBox[
 {
 RowBox[
 {
+RowBox[
+{
 RowBox[{"InvarCases", "[", "12", "]"}],
 ":=",
 RowBox[
@@ -4334,7 +3957,9 @@ RowBox[
 ";"
 }
 ],
-"\n",
+"\n"
+}
+],
 "\[IndentingNewLine]",
 RowBox[
 {
@@ -4444,6 +4069,8 @@ RowBox[
 {
 RowBox[
 {
+RowBox[
+{
 "InvarCases",
 "[",
 RowBox[
@@ -4496,8 +4123,12 @@ RowBox[
 ";"
 }
 ],
+"\[IndentingNewLine]"
+}
+],
 "\[IndentingNewLine]",
-"\[IndentingNewLine]",
+RowBox[
+{
 RowBox[
 {
 RowBox[
@@ -4556,8 +4187,12 @@ RowBox[{"rank", ",", "order", ",", "#"}],
 ";"
 }
 ],
-"\n",
+"\n"
+}
+],
 "\[IndentingNewLine]",
+RowBox[
+{
 RowBox[
 {
 RowBox[
@@ -4572,7 +4207,9 @@ RowBox[{"{", RowBox[{"{", "0", "}"}], "}"}]
 ";"
 }
 ],
-"\n",
+"\n"
+}
+],
 "\[IndentingNewLine]",
 RowBox[
 {
@@ -4594,6 +4231,8 @@ RowBox[
 RowBox[
 {
 RowBox[
+{
+RowBox[
 {"InvarCases", "[", RowBox[{"0", ",", "4", ",", "2"}], "]"}
 ],
 "=",
@@ -4605,7 +4244,9 @@ RowBox[
 ";"
 }
 ],
-"\n",
+"\n"
+}
+],
 "\[IndentingNewLine]",
 RowBox[
 {
@@ -4654,6 +4295,8 @@ RowBox[
 RowBox[
 {
 RowBox[
+{
+RowBox[
 {"InvarCases", "[", RowBox[{"0", ",", "6", ",", "3"}], "]"}
 ],
 "=",
@@ -4669,7 +4312,9 @@ RowBox[{"{", RowBox[{"0", ",", "0", ",", "0"}], "}"}],
 ";"
 }
 ],
-"\n",
+"\n"
+}
+],
 "\[IndentingNewLine]",
 RowBox[
 {
@@ -4747,6 +4392,8 @@ RowBox[
 RowBox[
 {
 RowBox[
+{
+RowBox[
 {"InvarCases", "[", RowBox[{"0", ",", "8", ",", "4"}], "]"}
 ],
 "=",
@@ -4764,7 +4411,9 @@ RowBox[
 ";"
 }
 ],
-"\[IndentingNewLine]",
+"\[IndentingNewLine]"
+}
+],
 "\n",
 RowBox[
 {
@@ -4900,6 +4549,8 @@ RowBox[
 {
 RowBox[
 {
+RowBox[
+{
 "InvarCases",
 "[",
 RowBox[{"0", ",", "10", ",", "5"}],
@@ -4925,7 +4576,9 @@ RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "0"}],
 ";"
 }
 ],
-"\n",
+"\n"
+}
+],
 "\[IndentingNewLine]",
 RowBox[
 {
@@ -5125,6 +4778,8 @@ RowBox[
 {
 RowBox[
 {
+RowBox[
+{
 "InvarCases",
 "[",
 RowBox[{"0", ",", "12", ",", "6"}],
@@ -5152,7 +4807,9 @@ RowBox[
 ";"
 }
 ],
-"\[IndentingNewLine]",
+"\[IndentingNewLine]"
+}
+],
 "\n",
 RowBox[
 {
@@ -5202,11 +4859,8 @@ RowBox[
 }
 ]
 }
-]
-}
-]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -5951,10 +5605,10 @@ RowBox[{"0", ",", "14", ",", "7"}],
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -5971,10 +5625,10 @@ RowBox[{"{", RowBox[{"{", "0", "}"}], "}"}]
 ";"
 }
 ],
-"\n"
+"\[IndentingNewLine]"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[
@@ -6008,10 +5662,10 @@ RowBox[
 ";"
 }
 ],
-"\n"
+"\[IndentingNewLine]"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[
@@ -6076,10 +5730,10 @@ RowBox[{"{", RowBox[{"0", ",", "0", ",", "0"}], "}"}],
 ";"
 }
 ],
-"\n"
+"\[IndentingNewLine]"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[
@@ -6175,10 +5829,10 @@ RowBox[
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -6340,10 +5994,10 @@ RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "0"}],
 ";"
 }
 ],
-"\n"
+"\[IndentingNewLine]"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[
@@ -6571,10 +6225,10 @@ RowBox[
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -6624,192 +6278,7 @@ RowBox[
 ]
 }
 ],
-"Input"
-],
-Cell[
-CellGroupData[
-{
-Cell[
-BoxData[RowBox[{"InvarCases", "[", "0", "]"}]],
-"Input"
-],
-Cell[
-BoxData[
-RowBox[
-{
-"{",
-RowBox[
-{
-RowBox[{"{", "0", "}"}],
-",",
-RowBox[{"{", RowBox[{"0", ",", "0"}], "}"}],
-",",
-RowBox[{"{", "2", "}"}],
-",",
-RowBox[{"{", RowBox[{"0", ",", "0", ",", "0"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"0", ",", "2"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"1", ",", "1"}], "}"}],
-",",
-RowBox[{"{", "4", "}"}],
-",",
-RowBox[
-{"{", RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}
-],
-",",
-RowBox[{"{", RowBox[{"0", ",", "0", ",", "2"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"0", ",", "1", ",", "1"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"0", ",", "4"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"1", ",", "3"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"2", ",", "2"}], "}"}],
-",",
-RowBox[{"{", "6", "}"}],
-",",
-RowBox[
-{
-"{",
-RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "0"}],
-"}"
-}
-],
-",",
-RowBox[
-{"{", RowBox[{"0", ",", "0", ",", "0", ",", "2"}], "}"}
-],
-",",
-RowBox[
-{"{", RowBox[{"0", ",", "0", ",", "1", ",", "1"}], "}"}
-],
-",",
-RowBox[{"{", RowBox[{"0", ",", "0", ",", "4"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"0", ",", "1", ",", "3"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"0", ",", "2", ",", "2"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"1", ",", "1", ",", "2"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"0", ",", "6"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"1", ",", "5"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"2", ",", "4"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"3", ",", "3"}], "}"}],
-",",
-RowBox[{"{", "8", "}"}],
-",",
-RowBox[
-{
-"{",
-RowBox[
-{"0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0"}
-],
-"}"
-}
-],
-",",
-RowBox[
-{
-"{",
-RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "2"}],
-"}"
-}
-],
-",",
-RowBox[
-{
-"{",
-RowBox[{"0", ",", "0", ",", "0", ",", "1", ",", "1"}],
-"}"
-}
-],
-",",
-RowBox[
-{"{", RowBox[{"0", ",", "0", ",", "0", ",", "4"}], "}"}
-],
-",",
-RowBox[
-{"{", RowBox[{"0", ",", "0", ",", "1", ",", "3"}], "}"}
-],
-",",
-RowBox[
-{"{", RowBox[{"0", ",", "0", ",", "2", ",", "2"}], "}"}
-],
-",",
-RowBox[
-{"{", RowBox[{"0", ",", "1", ",", "1", ",", "2"}], "}"}
-],
-",",
-RowBox[
-{"{", RowBox[{"1", ",", "1", ",", "1", ",", "1"}], "}"}
-],
-",",
-RowBox[{"{", RowBox[{"0", ",", "0", ",", "6"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"0", ",", "1", ",", "5"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"0", ",", "2", ",", "4"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"1", ",", "1", ",", "4"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"0", ",", "3", ",", "3"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"1", ",", "2", ",", "3"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"2", ",", "2", ",", "2"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"0", ",", "8"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"1", ",", "7"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"2", ",", "6"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"3", ",", "5"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"4", ",", "4"}], "}"}],
-",",
-RowBox[{"{", "10", "}"}],
-",",
-RowBox[
-{
-"{",
-RowBox[
-{
-"0",
-",",
-"0",
-",",
-"0",
-",",
-"0",
-",",
-"0",
-",",
-"0",
-",",
-"0"
-}
-],
-"}"
-}
-]
-}
-],
-"}"
-}
-]
-],
-"Output"
-]
-},
-Open
-]
+"Code"
 ],
 Cell[
 BoxData[
@@ -6989,10 +6458,10 @@ RowBox[{"0", ",", "10", ",", "5"}],
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -7014,10 +6483,10 @@ RowBox[{"{", RowBox[{"{", "0", "}"}], "}"}]
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -7061,10 +6530,10 @@ RowBox[
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -7144,10 +6613,10 @@ RowBox[{"{", RowBox[{"0", ",", "0", ",", "0"}], "}"}],
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -7263,10 +6732,10 @@ RowBox[
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -7300,10 +6769,10 @@ RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "0"}],
 ";"
 }
 ],
-"\n"
+"\[IndentingNewLine]"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[
@@ -7365,79 +6834,7 @@ RowBox[{"{", "args", "}"}]
 ]
 }
 ],
-"Input"
-],
-Cell[
-CellGroupData[
-{
-Cell[
-BoxData[RowBox[{"InvarDualCases", "[", "0", "]"}]],
-"Input"
-],
-Cell[
-BoxData[
-RowBox[
-{
-"{",
-RowBox[
-{
-RowBox[{"{", "0", "}"}],
-",",
-RowBox[{"{", RowBox[{"0", ",", "0"}], "}"}],
-",",
-RowBox[{"{", "2", "}"}],
-",",
-RowBox[{"{", RowBox[{"0", ",", "0", ",", "0"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"0", ",", "2"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"1", ",", "1"}], "}"}],
-",",
-RowBox[{"{", "4", "}"}],
-",",
-RowBox[
-{"{", RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}
-],
-",",
-RowBox[{"{", RowBox[{"0", ",", "0", ",", "2"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"0", ",", "1", ",", "1"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"0", ",", "4"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"1", ",", "3"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"2", ",", "2"}], "}"}],
-",",
-RowBox[{"{", "6", "}"}],
-",",
-RowBox[
-{
-"{",
-RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "0"}],
-"}"
-}
-]
-}
-],
-"}"
-}
-]
-],
-"Output"
-]
-},
-Open
-]
-],
-Cell[
-CellGroupData[
-{
-Cell[BoxData[RowBox[{"Length", "[", "%", "]"}]], "Input"],
-Cell[BoxData["15"], "Output"]
-},
-Open
-]
+"Code"
 ]
 },
 Closed
@@ -8837,7 +8234,7 @@ RowBox[
 ]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -9787,14 +9184,11 @@ RowBox[{"{", RowBox[{"0", ",", "0", ",", "0"}], "}"}]
 ]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
-RowBox[
 {
-"\[IndentingNewLine]",
-"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -9816,8 +9210,12 @@ RowBox[{"0", ",", RowBox[{"{", "}"}]}],
 ";"
 }
 ],
+"\[IndentingNewLine]"
+}
+],
 "\[IndentingNewLine]",
-"\[IndentingNewLine]",
+RowBox[
+{
 RowBox[
 {
 RowBox[
@@ -9837,7 +9235,9 @@ RowBox[{"0", ",", RowBox[{"{", "0", "}"}]}],
 ";"
 }
 ],
-"\[IndentingNewLine]",
+"\[IndentingNewLine]"
+}
+],
 "\[IndentingNewLine]",
 RowBox[
 {
@@ -9867,6 +9267,8 @@ RowBox[
 {
 RowBox[
 {
+RowBox[
+{
 "MaxDualIndex",
 "[",
 RowBox[{"0", ",", RowBox[{"{", "2", "}"}]}],
@@ -9880,7 +9282,9 @@ RowBox[{"0", ",", RowBox[{"{", "2", "}"}]}],
 ";"
 }
 ],
-"\[IndentingNewLine]",
+"\[IndentingNewLine]"
+}
+],
 "\[IndentingNewLine]",
 RowBox[
 {
@@ -9958,6 +9362,8 @@ RowBox[
 {
 RowBox[
 {
+RowBox[
+{
 "MaxDualIndex",
 "[",
 RowBox[{"0", ",", RowBox[{"{", "4", "}"}]}],
@@ -9971,7 +9377,9 @@ RowBox[{"0", ",", RowBox[{"{", "4", "}"}]}],
 ";"
 }
 ],
-"\[IndentingNewLine]",
+"\[IndentingNewLine]"
+}
+],
 "\[IndentingNewLine]",
 RowBox[
 {
@@ -10125,6 +9533,8 @@ RowBox[
 {
 RowBox[
 {
+RowBox[
+{
 "MaxDualIndex",
 "[",
 RowBox[{"0", ",", RowBox[{"{", "6", "}"}]}],
@@ -10138,8 +9548,12 @@ RowBox[{"0", ",", RowBox[{"{", "6", "}"}]}],
 ";"
 }
 ],
+"\[IndentingNewLine]"
+}
+],
 "\[IndentingNewLine]",
-"\[IndentingNewLine]",
+RowBox[
+{
 RowBox[
 {
 RowBox[
@@ -10171,8 +9585,12 @@ RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "0"}],
 ";"
 }
 ],
+"\[IndentingNewLine]"
+}
+],
 "\[IndentingNewLine]",
-"\[IndentingNewLine]",
+RowBox[
+{
 RowBox[
 {
 RowBox[
@@ -10206,8 +9624,12 @@ RowBox[
 ";"
 }
 ],
+"\[IndentingNewLine]"
+}
+],
 "\[IndentingNewLine]",
-"\[IndentingNewLine]",
+RowBox[
+{
 RowBox[
 {
 RowBox[
@@ -10255,7 +9677,9 @@ RowBox[
 ";"
 }
 ],
-"\[IndentingNewLine]",
+"\[IndentingNewLine]"
+}
+],
 "\[IndentingNewLine]",
 RowBox[
 {
@@ -10299,11 +9723,8 @@ RowBox[
 }
 ]
 }
-]
-}
-]
 ],
-"Input"
+"Code"
 ]
 },
 Closed
@@ -10324,9 +9745,8 @@ RowBox[{"Added", " ", "rank", " ", "argument"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
-Cell[BoxData[""], "Input"],
 Cell[
 BoxData[
 RowBox[
@@ -10398,7 +9818,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -10476,7 +9896,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -10549,7 +9969,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -10622,7 +10042,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ]
 },
 Closed
@@ -10642,7 +10062,7 @@ RowBox[{"No", " ", "dim", " ", "added", " ", "free"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -10720,7 +10140,7 @@ RowBox[{"step", ",", "rank", ",", "case", ",", "dim"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -10808,7 +10228,7 @@ RowBox[{"step", ",", "rank", ",", "case", ",", "dim"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -10886,7 +10306,7 @@ RowBox[{"step", ",", "rank", ",", "case", ",", "dim"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -10974,7 +10394,7 @@ RowBox[{"step", ",", "rank", ",", "case", ",", "dim"}],
 }
 ]
 ],
-"Input"
+"Code"
 ]
 },
 Closed
@@ -11144,7 +10564,7 @@ RowBox[{"1", ",", "rank", ",", "case"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -11303,313 +10723,7 @@ RowBox[{"1", ",", "rank", ",", "case"}],
 }
 ]
 ],
-"Input"
-],
-Cell[
-CellGroupData[
-{
-Cell[
-BoxData[
-RowBox[
-{
-"RInvRules",
-"[",
-RowBox[
-{
-"1",
-",",
-"0",
-",",
-RowBox[{"{", RowBox[{"0", ",", "0"}], "}"}]
-}
-],
-"]"
-}
-]
-],
-"Input"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"Reading InvRules for step 1, rank \"",
-"\[InvisibleSpace]",
-"0",
-"\[InvisibleSpace]",
-"\" and case \"",
-"\[InvisibleSpace]",
-RowBox[{"{", RowBox[{"0", ",", "0"}], "}"}]
-}
-],
-"Reading InvRules for step 1, rank "0" and case "{0, 0},
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-RowBox[
-{
-"{",
-RowBox[
-{
-RowBox[
-{
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"00,1\""
-],
-"\[Rule]",
-RowBox[
-{
-"{",
-RowBox[
-{
-RowBox[{"{", RowBox[{"2", ",", "3"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"4", ",", "5"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"6", ",", "7"}], "}"}]
-}
-],
-"}"
-}
-]
-}
-],
-",",
-RowBox[
-{
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"00,2\""
-],
-"\[Rule]",
-RowBox[
-{
-"{",
-RowBox[
-{
-RowBox[{"{", RowBox[{"2", ",", "3", ",", "5"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"4", ",", "7", ",", "6"}], "}"}]
-}
-],
-"}"
-}
-]
-}
-],
-",",
-RowBox[
-{
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"00,3\""
-],
-"\[Rule]",
-RowBox[
-{
-"{",
-RowBox[
-{
-RowBox[{"{", RowBox[{"2", ",", "3", ",", "5"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"4", ",", "7"}], "}"}]
-}
-],
-"}"
-}
-]
-}
-]
-}
-],
-"}"
-}
-]
-],
-"Output"
-]
-},
-Open
-]
-],
-Cell[
-CellGroupData[
-{
-Cell[
-BoxData[
-RowBox[
-{
-"DualRInvRules",
-"[",
-RowBox[
-{
-"1",
-",",
-"0",
-",",
-RowBox[{"{", RowBox[{"0", ",", "0"}], "}"}]
-}
-],
-"]"
-}
-]
-],
-"Input"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"Reading DualInvRules for step 1, rank \"",
-"\[InvisibleSpace]",
-"0",
-"\[InvisibleSpace]",
-"\" and case  \"",
-"\[InvisibleSpace]",
-RowBox[{"{", RowBox[{"0", ",", "0"}], "}"}]
-}
-],
-SequenceForm[
-"Reading DualInvRules for step 1, rank ",
-0,
-" and case  ",
-{0, 0}
-],
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-RowBox[
-{
-"{",
-RowBox[
-{
-RowBox[
-{
-SubscriptBox[
-TemplateBox[{"\"D\"", "\"0\""}, "Superscript"],
-"\"00,1\""
-],
-"\[Rule]",
-RowBox[
-{
-"{",
-RowBox[
-{
-RowBox[{"{", RowBox[{"2", ",", "3"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"4", ",", "5"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"6", ",", "7", ",", "9"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"8", ",", "11", ",", "10"}], "}"}]
-}
-],
-"}"
-}
-]
-}
-],
-",",
-RowBox[
-{
-SubscriptBox[
-TemplateBox[{"\"D\"", "\"0\""}, "Superscript"],
-"\"00,2\""
-],
-"\[Rule]",
-RowBox[
-{
-"{",
-RowBox[
-{
-RowBox[{"{", RowBox[{"2", ",", "3", ",", "5"}], "}"}],
-",",
-RowBox[
-{"{", RowBox[{"4", ",", "7", ",", "9", ",", "6"}], "}"}
-],
-",",
-RowBox[{"{", RowBox[{"8", ",", "11", ",", "10"}], "}"}]
-}
-],
-"}"
-}
-]
-}
-],
-",",
-RowBox[
-{
-SubscriptBox[
-TemplateBox[{"\"D\"", "\"0\""}, "Superscript"],
-"\"00,3\""
-],
-"\[Rule]",
-RowBox[
-{
-"{",
-RowBox[
-{
-RowBox[{"{", RowBox[{"2", ",", "3", ",", "5"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"4", ",", "7", ",", "9"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"8", ",", "11", ",", "10"}], "}"}]
-}
-],
-"}"
-}
-]
-}
-],
-",",
-RowBox[
-{
-SubscriptBox[
-TemplateBox[{"\"D\"", "\"0\""}, "Superscript"],
-"\"00,4\""
-],
-"\[Rule]",
-RowBox[
-{
-"{",
-RowBox[
-{
-RowBox[{"{", RowBox[{"2", ",", "3", ",", "5"}], "}"}],
-",",
-RowBox[
-{"{", RowBox[{"4", ",", "7", ",", "6", ",", "9"}], "}"}
-],
-",",
-RowBox[{"{", RowBox[{"8", ",", "11", ",", "10"}], "}"}]
-}
-],
-"}"
-}
-]
-}
-]
-}
-],
-"}"
-}
-]
-],
-"Output"
-]
-},
-Open
-]
+"Code"
 ],
 Cell[
 BoxData[
@@ -11663,7 +10777,7 @@ RowBox[{"Cycles", "[", RowBox[{"{", "}"}], "]"}],
 ]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -11714,7 +10828,7 @@ RowBox[{"1", ",", "rank", ",", "case"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -11771,7 +10885,7 @@ RowBox[{"1", ",", "rank", ",", "case"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -11822,7 +10936,7 @@ RowBox[{"1", ",", "rank", ",", "case"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -11879,7 +10993,7 @@ RowBox[{"1", ",", "rank", ",", "case"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -11951,122 +11065,14 @@ RowBox[{"DualRInv", "\[Rule]", "DualWInv"}]
 ]
 }
 ],
-"Input"
-],
-Cell[
-CellGroupData[
-{
-Cell[
-BoxData[
-RowBox[
-{
-"WInvRules",
-"[",
-RowBox[
-{
-"1",
-",",
-"0",
-",",
-RowBox[{"{", RowBox[{"0", ",", "0"}], "}"}]
-}
-],
-"]"
-}
-]
-],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
-RowBox[
-{
-"{",
-RowBox[
-{
-RowBox[
-{
-SubscriptBox[
-TemplateBox[{"\"W\"", "\"0\""}, "Superscript"],
-"\"00,1\""
+RowBox[{"Examples", " ", "with", " ", "invariants"}]
 ],
-"\[Rule]",
-RowBox[
-{
-"{",
-RowBox[
-{
-RowBox[{"{", RowBox[{"2", ",", "3"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"4", ",", "5"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"6", ",", "7"}], "}"}]
-}
+"Code"
 ],
-"}"
-}
-]
-}
-],
-",",
-RowBox[
-{
-SubscriptBox[
-TemplateBox[{"\"W\"", "\"0\""}, "Superscript"],
-"\"00,2\""
-],
-"\[Rule]",
-RowBox[
-{
-"{",
-RowBox[
-{
-RowBox[{"{", RowBox[{"2", ",", "3", ",", "5"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"4", ",", "7", ",", "6"}], "}"}]
-}
-],
-"}"
-}
-]
-}
-],
-",",
-RowBox[
-{
-SubscriptBox[
-TemplateBox[{"\"W\"", "\"0\""}, "Superscript"],
-"\"00,3\""
-],
-"\[Rule]",
-RowBox[
-{
-"{",
-RowBox[
-{
-RowBox[{"{", RowBox[{"2", ",", "3", ",", "5"}], "}"}],
-",",
-RowBox[{"{", RowBox[{"4", ",", "7"}], "}"}]
-}
-],
-"}"
-}
-]
-}
-]
-}
-],
-"}"
-}
-]
-],
-"Output"
-]
-},
-Open
-]
-],
-Cell["Examples with invariants", "Text"],
 Cell[
 BoxData[
 RowBox[
@@ -12095,7 +11101,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -12247,7 +11253,7 @@ RowBox[{"2", ",", "rank", ",", "case"}],
 ]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -12372,7 +11378,7 @@ RowBox[{"2", ",", "rank", ",", "case"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -12497,393 +11503,7 @@ RowBox[{"2", ",", "rank", ",", "case"}],
 }
 ]
 ],
-"Input"
-],
-Cell[
-CellGroupData[
-{
-Cell[
-BoxData[
-RowBox[
-{
-"DualRInvRules",
-"[",
-RowBox[
-{
-"2",
-",",
-"0",
-",",
-RowBox[{"{", RowBox[{"0", ",", "0"}], "}"}]
-}
-],
-"]"
-}
-]
-],
-"Input"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"Reading DualInvRules for step 2, rank \"",
-"\[InvisibleSpace]",
-"0",
-"\[InvisibleSpace]",
-"\" and case \"",
-"\[InvisibleSpace]",
-RowBox[{"{", RowBox[{"0", ",", "0"}], "}"}]
-}
-],
-"Reading DualInvRules for step 2, rank "0" and case "{0, 0},
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-RowBox[
-{
-"{",
-RowBox[
-{
-RowBox[
-{
-SubscriptBox[
-TemplateBox[{"\"D\"", "\"0\""}, "Superscript"],
-"\"00,1\""
-],
-"\[Rule]",
-"0"
-}
-],
-",",
-RowBox[
-{
-SubscriptBox[
-TemplateBox[{"\"D\"", "\"0\""}, "Superscript"],
-"\"00,3\""
-],
-"\[Rule]",
-FractionBox[
-SubscriptBox[
-TemplateBox[{"\"D\"", "\"0\""}, "Superscript"],
-"\"00,2\""
-],
-"2"
-]
-}
-],
-",",
-RowBox[
-{
-SubscriptBox[
-TemplateBox[{"\"D\"", "\"0\""}, "Superscript"],
-"\"00,4\""
-],
-"\[Rule]",
-FractionBox[
-SubscriptBox[
-TemplateBox[{"\"D\"", "\"0\""}, "Superscript"],
-"\"00,2\""
-],
-"4"
-]
-}
-]
-}
-],
-"}"
-}
-]
-],
-"Output"
-]
-},
-Open
-]
-],
-Cell[
-CellGroupData[
-{
-Cell[
-BoxData[
-RowBox[
-{
-"RInvs",
-"[",
-RowBox[{"2", ",", "4", ",", RowBox[{"{", "2", "}"}]}],
-"]"
-}
-]
-],
-"Input"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"Reading InvRules for step 2, rank \"",
-"\[InvisibleSpace]",
-"4",
-"\[InvisibleSpace]",
-"\" and case \"",
-"\[InvisibleSpace]",
-RowBox[{"{", "2", "}"}]
-}
-],
-"Reading InvRules for step 2, rank "4" and case "{2},
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-RowBox[
-{
-"{",
-RowBox[
-{
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,1\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,2\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,4\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,5\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,6\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,7\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,8\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,9\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,10\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,11\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,16\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,17\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,18\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,19\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,20\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,21\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,22\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,23\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,28\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,29\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,30\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,31\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,32\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,33\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,34\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,35\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,36\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,37\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,38\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,39\""
-]
-}
-],
-"}"
-}
-]
-],
-"Output"
-]
-},
-Open
-]
-],
-Cell[
-CellGroupData[
-{
-Cell[
-BoxData[
-RowBox[
-{
-"RInvRules",
-"[",
-RowBox[
-{
-"2",
-",",
-"0",
-",",
-RowBox[{"{", RowBox[{"0", ",", "0"}], "}"}]
-}
-],
-"]"
-}
-]
-],
-"Input"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"Reading InvRules for step 2, rank \"",
-"\[InvisibleSpace]",
-"0",
-"\[InvisibleSpace]",
-"\" and case \"",
-"\[InvisibleSpace]",
-RowBox[{"{", RowBox[{"0", ",", "0"}], "}"}]
-}
-],
-"Reading InvRules for step 2, rank "0" and case "{0, 0},
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-RowBox[
-{
-"{",
-RowBox[
-{
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"00,3\""
-],
-"\[Rule]",
-FractionBox[
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"00,2\""
-],
-"2"
-]
-}
-],
-"}"
-}
-]
-],
-"Output"
-]
-},
-Open
-]
+"Code"
 ],
 Cell[
 BoxData[
@@ -13035,7 +11655,7 @@ RowBox[{"3", ",", "rank", ",", "case"}],
 ]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -13160,7 +11780,7 @@ RowBox[{"3", ",", "rank", ",", "case"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -13285,146 +11905,7 @@ RowBox[{"3", ",", "rank", ",", "case"}],
 }
 ]
 ],
-"Input"
-],
-Cell[
-CellGroupData[
-{
-Cell[
-BoxData[
-RowBox[
-{
-"RInvs",
-"[",
-RowBox[{"3", ",", "4", ",", RowBox[{"{", "2", "}"}]}],
-"]"
-}
-]
-],
-"Input"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"Reading InvRules for step 3, rank \"",
-"\[InvisibleSpace]",
-"4",
-"\[InvisibleSpace]",
-"\" and case \"",
-"\[InvisibleSpace]",
-RowBox[{"{", "2", "}"}]
-}
-],
-"Reading InvRules for step 3, rank "4" and case "{2},
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-RowBox[
-{
-"{",
-RowBox[
-{
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,1\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,2\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,4\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,6\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,8\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,16\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,17\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,20\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,21\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,22\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,28\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,29\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,30\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,31\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,32\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,36\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,37\""
-]
-}
-],
-"}"
-}
-]
-],
-"Output"
-]
-},
-Open
-]
+"Code"
 ],
 Cell[
 BoxData[
@@ -13576,7 +12057,7 @@ RowBox[{"4", ",", "rank", ",", "case"}],
 ]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -13822,91 +12303,7 @@ RowBox[{"4", ",", "rank", ",", "case"}],
 ]
 }
 ],
-"Input"
-],
-Cell[
-CellGroupData[
-{
-Cell[
-BoxData[
-RowBox[
-{
-"RInvs",
-"[",
-RowBox[{"4", ",", "4", ",", RowBox[{"{", "2", "}"}]}],
-"]"
-}
-]
-],
-"Input"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"Reading InvRules for step 4, rank \"",
-"\[InvisibleSpace]",
-"4",
-"\[InvisibleSpace]",
-"\" and case \"",
-"\[InvisibleSpace]",
-RowBox[{"{", "2", "}"}]
-}
-],
-"Reading InvRules for step 4, rank "4" and case "{2},
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-RowBox[
-{
-"{",
-RowBox[
-{
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,28\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,29\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,30\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,31\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,36\""
-],
-",",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"4\""}, "Superscript"],
-"\"2,37\""
-]
-}
-],
-"}"
-}
-]
-],
-"Output"
-]
-},
-Open
-]
+"Code"
 ],
 Cell[
 BoxData[
@@ -13983,7 +12380,7 @@ RowBox[{"5", ",", "rank", ",", "case"}],
 }
 ]
 ],
-"Input"
+"Code"
 ]
 },
 Closed
@@ -13993,7 +12390,6 @@ Cell[
 CellGroupData[
 {
 Cell["Step 5 dim dep rules", "Subsection"],
-Cell[BoxData[""], "Input"],
 Cell[
 BoxData[
 {
@@ -14198,7 +12594,7 @@ RowBox[{"5", ",", "rank", ",", "case", ",", "dim"}],
 ]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -14383,7 +12779,7 @@ RowBox[{"5", ",", "rank", ",", "case", ",", "dim"}],
 ]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -14561,740 +12957,7 @@ RowBox[{"5", ",", "rank", ",", "case", ",", "dim"}],
 ]
 }
 ],
-"Input"
-],
-Cell[
-CellGroupData[
-{
-Cell[
-BoxData[
-RowBox[
-{
-"RInvRules",
-"[",
-RowBox[
-{
-"5",
-",",
-"0",
-",",
-RowBox[
-{"{", RowBox[{"0", ",", "0", ",", "1", ",", "1"}], "}"}
-]
-}
-],
-"]"
-}
-]
-],
-"Input"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"Reading InvRules for step 5, rank \"",
-"\[InvisibleSpace]",
-"0",
-"\[InvisibleSpace]",
-"\", case \"",
-"\[InvisibleSpace]",
-RowBox[
-{"{", RowBox[{"0", ",", "0", ",", "1", ",", "1"}], "}"}
-],
-"\[InvisibleSpace]",
-"\" and dimension \"",
-"\[InvisibleSpace]",
-"4"
-}
-],
-SequenceForm[
-"Reading InvRules for step 5, rank ",
-0,
-", case ",
-{0, 0, 1, 1},
-" and dimension ",
-4
-],
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-InterpretationBox[
-TagBox[
-FrameBox[
-GridBox[
-{
-{
-ItemBox[
-TagBox[
-RowBox[
-{
-"{",
-RowBox[
-{
-RowBox[
-{
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"0011,22\""
-],
-"\[Rule]",
-RowBox[
-{
-TemplateBox[{"42"}, "OutputSizeLimit`Skeleton"],
-"+",
-RowBox[
-{
-"2",
-" ",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"0011,21\""
-]
-}
-]
-}
-]
-}
-],
-",",
-TemplateBox[{"116"}, "OutputSizeLimit`Skeleton"],
-",",
-RowBox[
-{
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"0011,1715\""
-],
-"\[Rule]",
-RowBox[
-{
-RowBox[
-{
-RowBox[{"-", FractionBox["293", "96"]}],
-" ",
-SubsuperscriptBox[
-TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"],
-"\"0,1\"",
-"2"
-],
-" ",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"11,1\""
-]
-}
-],
-"+",
-TemplateBox[{"139"}, "OutputSizeLimit`Skeleton"],
-"+",
-FractionBox[
-TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"],
-"4"
-]
-}
-]
-}
-]
-}
-],
-"}"
-}
-],
-Short[#1, 5] &
-],
-BaseStyle -> {Deployed -> False},
-StripOnInput -> False
-]
-},
-{
-GridBox[
-{
-{
-PaneBox[
-TagBox[
-TooltipBox[
-StyleBox[
-StyleBox[
-DynamicBox[
-ToBoxes[
-FEPrivate`FrontEndResource[
-"FEStrings",
-"sizeBriefExplanation"
-],
-StandardForm
-],
-ImageSizeCache -> {107.0, {4.0, 15.0}}
-],
-StripOnInput -> False,
-DynamicUpdating -> True,
-LineSpacing -> {1, 2},
-LineIndent -> 0,
-LinebreakAdjustments -> {1.0, 100, 0, 0, 0}
-],
-"OSLText",
-StripOnInput -> False
-],
-StyleBox[
-DynamicBox[
-ToBoxes[
-FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"],
-StandardForm
-]
-],
-DynamicUpdating -> True,
-LineIndent -> 0,
-LinebreakAdjustments -> {1.0, 100, 0, 0, 0},
-LineSpacing -> {1, 2},
-StripOnInput -> False
-]
-],
-Function[
-Annotation[
-#1,
-Style[
-Dynamic[
-FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"]
-],
-DynamicUpdating -> True,
-LineIndent -> 0,
-LinebreakAdjustments -> {1.0, 100, 0, 0, 0},
-LineSpacing -> {1, 2}
-],
-"Tooltip"
-]
-]
-],
-Alignment -> Center,
-BaselinePosition -> Baseline,
-ImageSize -> {Automatic, {25, Full}}
-],
-ButtonBox[
-PaneSelectorBox[
-{
-False ->
-StyleBox[
-StyleBox[
-DynamicBox[
-ToBoxes[
-FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"],
-StandardForm
-],
-ImageSizeCache -> {93.0, {1.0, 15.0}}
-],
-StripOnInput -> False,
-DynamicUpdating -> True,
-LineSpacing -> {1, 2},
-LineIndent -> 0,
-LinebreakAdjustments -> {1.0, 100, 0, 0, 0}
-],
-"OSLControl",
-StripOnInput -> False
-],
-True ->
-StyleBox[
-StyleBox[
-DynamicBox[
-ToBoxes[
-FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"],
-StandardForm
-]
-],
-StripOnInput -> False,
-DynamicUpdating -> True,
-LineSpacing -> {1, 2},
-LineIndent -> 0,
-LinebreakAdjustments -> {1.0, 100, 0, 0, 0}
-],
-"OSLControlActive",
-StripOnInput -> False
-]
-},
-Dynamic[CurrentValue["MouseOver"]],
-Alignment -> Center,
-FrameMargins -> 0,
-ImageSize -> {Automatic, {25, Full}}
-],
-Appearance -> None,
-BaselinePosition -> Baseline,
-ButtonFunction :>
-OutputSizeLimit`ButtonFunction[
-OutputSizeLimit`Defer,
-363,
-18545010503808907945,
-5 / 2
-],
-Enabled -> True,
-Evaluator -> Automatic,
-Method -> "Queued"
-],
-ButtonBox[
-PaneSelectorBox[
-{
-False ->
-StyleBox[
-StyleBox[
-DynamicBox[
-ToBoxes[
-FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"],
-StandardForm
-],
-ImageSizeCache -> {104.0, {1.0, 15.0}}
-],
-StripOnInput -> False,
-DynamicUpdating -> True,
-LineSpacing -> {1, 2},
-LineIndent -> 0,
-LinebreakAdjustments -> {1.0, 100, 0, 0, 0}
-],
-"OSLControl",
-StripOnInput -> False
-],
-True ->
-StyleBox[
-StyleBox[
-DynamicBox[
-ToBoxes[
-FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"],
-StandardForm
-]
-],
-StripOnInput -> False,
-DynamicUpdating -> True,
-LineSpacing -> {1, 2},
-LineIndent -> 0,
-LinebreakAdjustments -> {1.0, 100, 0, 0, 0}
-],
-"OSLControlActive",
-StripOnInput -> False
-]
-},
-Dynamic[CurrentValue["MouseOver"]],
-Alignment -> Center,
-FrameMargins -> 0,
-ImageSize -> {Automatic, {25, Full}}
-],
-Appearance -> None,
-BaselinePosition -> Baseline,
-ButtonFunction :>
-OutputSizeLimit`ButtonFunction[
-OutputSizeLimit`Defer,
-363,
-18545010503808907945,
-5 * 2
-],
-Enabled -> True,
-Evaluator -> Automatic,
-Method -> "Queued"
-],
-ButtonBox[
-PaneSelectorBox[
-{
-False ->
-StyleBox[
-StyleBox[
-DynamicBox[
-ToBoxes[
-FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"],
-StandardForm
-],
-ImageSizeCache -> {77.0, {1.0, 15.0}}
-],
-StripOnInput -> False,
-DynamicUpdating -> True,
-LineSpacing -> {1, 2},
-LineIndent -> 0,
-LinebreakAdjustments -> {1.0, 100, 0, 0, 0}
-],
-"OSLControl",
-StripOnInput -> False
-],
-True ->
-StyleBox[
-StyleBox[
-DynamicBox[
-ToBoxes[
-FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"],
-StandardForm
-]
-],
-StripOnInput -> False,
-DynamicUpdating -> True,
-LineSpacing -> {1, 2},
-LineIndent -> 0,
-LinebreakAdjustments -> {1.0, 100, 0, 0, 0}
-],
-"OSLControlActive",
-StripOnInput -> False
-]
-},
-Dynamic[CurrentValue["MouseOver"]],
-Alignment -> Center,
-FrameMargins -> 0,
-ImageSize -> {Automatic, {25, Full}}
-],
-Appearance -> None,
-BaselinePosition -> Baseline,
-ButtonFunction :>
-OutputSizeLimit`ButtonFunction[
-OutputSizeLimit`Defer,
-363,
-18545010503808907945,
-Infinity
-],
-Enabled -> True,
-Evaluator -> Automatic,
-Method -> "Queued"
-],
-ButtonBox[
-PaneSelectorBox[
-{
-False ->
-StyleBox[
-StyleBox[
-DynamicBox[
-ToBoxes[
-FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"],
-StandardForm
-],
-ImageSizeCache -> {135.0, {1.0, 16.0}}
-],
-StripOnInput -> False,
-DynamicUpdating -> True,
-LineSpacing -> {1, 2},
-LineIndent -> 0,
-LinebreakAdjustments -> {1.0, 100, 0, 0, 0}
-],
-"OSLControl",
-StripOnInput -> False
-],
-True ->
-StyleBox[
-StyleBox[
-DynamicBox[
-ToBoxes[
-FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"],
-StandardForm
-]
-],
-StripOnInput -> False,
-DynamicUpdating -> True,
-LineSpacing -> {1, 2},
-LineIndent -> 0,
-LinebreakAdjustments -> {1.0, 100, 0, 0, 0}
-],
-"OSLControlActive",
-StripOnInput -> False
-]
-},
-Dynamic[CurrentValue["MouseOver"]],
-Alignment -> Center,
-FrameMargins -> 0,
-ImageSize -> {Automatic, {25, Full}}
-],
-Appearance -> None,
-BaselinePosition -> Baseline,
-ButtonFunction :>
-FrontEndExecute[
-{
-FrontEnd`SetOptions[
-FrontEnd`$FrontEnd,
-FrontEnd`PreferencesSettings -> {"Page" -> "Advanced"}
-],
-FrontEnd`FrontEndToken["PreferencesDialog"]
-}
-],
-Evaluator -> None,
-Method -> "Preemptive"
-]
-}
-},
-AutoDelete -> False,
-FrameStyle -> GrayLevel[0.85],
-GridBoxDividers -> {"Columns" -> {False, {True}}},
-GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
-GridBoxSpacings -> {"Columns" -> {{2}}}
-]
-}
-},
-DefaultBaseStyle -> "Column",
-GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
-GridBoxDividers -> {"Columns" -> {{False}}, "Rows" -> {{False}}},
-GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{1.0}}},
-GridBoxSpacings -> {
-"Columns" -> {Offset[0.28], {Offset[0.56]}, Offset[0.28]},
-"Rows" -> {Offset[0.2], Offset[1.2], {Offset[0.4]}, Offset[0.2]}
-}
-],
-BaseStyle -> "OutputSizeLimit",
-FrameMargins -> {{12, 12}, {0, 15}},
-FrameStyle -> GrayLevel[0.85],
-RoundingRadius -> 5,
-StripOnInput -> False
-],
-Deploy,
-DefaultBaseStyle -> "Deploy"
-],
-If[ 18545010503808907945 === $SessionID,
-Out[363],
-Message[MessageName[Syntax, "noinfoker"]];
-Missing["NotAvailable"];
-]
-]
-],
-"Output"
-]
-},
-Open
-]
-],
-Cell[
-CellGroupData[
-{
-Cell[
-BoxData[
-RowBox[
-{
-"RInvRules",
-"[",
-RowBox[
-{
-"5",
-",",
-"0",
-",",
-RowBox[{"{", RowBox[{"0", ",", "0", ",", "0"}], "}"}]
-}
-],
-"]"
-}
-]
-],
-"Input"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"Reading InvRules for step 5, rank \"",
-"\[InvisibleSpace]",
-"0",
-"\[InvisibleSpace]",
-"\", case \"",
-"\[InvisibleSpace]",
-RowBox[{"{", RowBox[{"0", ",", "0", ",", "0"}], "}"}],
-"\[InvisibleSpace]",
-"\" and dimension \"",
-"\[InvisibleSpace]",
-"4"
-}
-],
-SequenceForm[
-"Reading InvRules for step 5, rank ",
-0,
-", case ",
-{0, 0, 0},
-" and dimension ",
-4
-],
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-RowBox[
-{
-"{",
-RowBox[
-{
-RowBox[
-{
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"000,3\""
-],
-"\[Rule]",
-RowBox[
-{
-RowBox[
-{
-FractionBox["1", "4"],
-" ",
-SubsuperscriptBox[
-RowBox[
-{"(", TemplateBox[{"\"I\"", "\"0\""}, "Superscript"], ")"}
-],
-"\"0,1\"",
-"3"
-]
-}
-],
-"-",
-RowBox[
-{
-"2",
-" ",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"0,1\""
-],
-" ",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"00,1\""
-]
-}
-],
-"+",
-RowBox[
-{
-FractionBox["1", "4"],
-" ",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"0,1\""
-],
-" ",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"00,2\""
-]
-}
-],
-"-",
-RowBox[
-{
-"2",
-" ",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"000,1\""
-]
-}
-],
-"+",
-RowBox[
-{
-"2",
-" ",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"000,2\""
-]
-}
-]
-}
-]
-}
-],
-",",
-RowBox[
-{
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"000,8\""
-],
-"\[Rule]",
-RowBox[
-{
-RowBox[
-{
-RowBox[{"-", FractionBox["5", "8"]}],
-" ",
-SubsuperscriptBox[
-RowBox[
-{"(", TemplateBox[{"\"I\"", "\"0\""}, "Superscript"], ")"}
-],
-"\"0,1\"",
-"3"
-]
-}
-],
-"+",
-RowBox[
-{
-FractionBox["9", "2"],
-" ",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"0,1\""
-],
-" ",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"00,1\""
-]
-}
-],
-"-",
-RowBox[
-{
-FractionBox["3", "8"],
-" ",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"0,1\""
-],
-" ",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"00,2\""
-]
-}
-],
-"+",
-RowBox[
-{
-"4",
-" ",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"000,1\""
-]
-}
-],
-"-",
-RowBox[
-{
-"3",
-" ",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"000,2\""
-]
-}
-],
-"+",
-FractionBox[
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"000,5\""
-],
-"2"
-]
-}
-]
-}
-]
-}
-],
-"}"
-}
-]
-],
-"Output"
-]
-},
-Open
-]
+"Code"
 ],
 Cell[
 BoxData[
@@ -15474,7 +13137,7 @@ RowBox[{"5", ",", "rank", ",", "case", ",", "dim"}],
 ]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -15670,253 +13333,10 @@ RowBox[{"6", ",", "rank", ",", "case", ",", "dim"}],
 ]
 }
 ],
-"Input"
-],
-Cell[
-CellGroupData[
-{
-Cell[
-BoxData[
-RowBox[
-{
-"RInvRules",
-"[",
-RowBox[
-{
-"6",
-",",
-"0",
-",",
-RowBox[
-{"{", RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}
-]
-}
-],
-"]"
-}
-]
-],
-"Input"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"Reading InvRules for step 6, rank \"",
-"\[InvisibleSpace]",
-"0",
-"\[InvisibleSpace]",
-"\", case \"",
-"\[InvisibleSpace]",
-RowBox[
-{"{", RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}
-],
-"\[InvisibleSpace]",
-"\" and dimension \"",
-"\[InvisibleSpace]",
-"4"
-}
-],
-SequenceForm[
-"Reading InvRules for step 6, rank ",
-0,
-", case ",
-{0, 0, 0, 0},
-" and dimension ",
-4
-],
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-RowBox[
-{
-"{",
-RowBox[
-{
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"0000,21\""
-],
-"\[Rule]",
-RowBox[
-{
-RowBox[
-{
-FractionBox["1", "16"],
-" ",
-"sigma",
-" ",
-SubsuperscriptBox[
-RowBox[
-{"(", TemplateBox[{"\"D\"", "\"0\""}, "Superscript"], ")"}
-],
-"\"00,2\"",
-"2"
-]
-}
-],
-"-",
-RowBox[
-{
-FractionBox["5", "12"],
-" ",
-SubsuperscriptBox[
-RowBox[
-{"(", TemplateBox[{"\"I\"", "\"0\""}, "Superscript"], ")"}
-],
-"\"0,1\"",
-"4"
-]
-}
-],
-"+",
-RowBox[
-{
-"4",
-" ",
-SubsuperscriptBox[
-RowBox[
-{"(", TemplateBox[{"\"I\"", "\"0\""}, "Superscript"], ")"}
-],
-"\"0,1\"",
-"2"
-],
-" ",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"00,1\""
-]
-}
-],
-"-",
-RowBox[
-{
-"2",
-" ",
-SubsuperscriptBox[
-RowBox[
-{"(", TemplateBox[{"\"I\"", "\"0\""}, "Superscript"], ")"}
-],
-"\"00,1\"",
-"2"
-]
-}
-],
-"-",
-RowBox[
-{
-FractionBox["1", "2"],
-" ",
-SubsuperscriptBox[
-RowBox[
-{"(", TemplateBox[{"\"I\"", "\"0\""}, "Superscript"], ")"}
-],
-"\"0,1\"",
-"2"
-],
-" ",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"00,2\""
-]
-}
-],
-"+",
-RowBox[
-{
-FractionBox["1", "4"],
-" ",
-SubsuperscriptBox[
-RowBox[
-{"(", TemplateBox[{"\"I\"", "\"0\""}, "Superscript"], ")"}
-],
-"\"00,2\"",
-"2"
-]
-}
-],
-"-",
-RowBox[
-{
-"8",
-" ",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"0,1\""
-],
-" ",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"000,2\""
-]
-}
-],
-"+",
-RowBox[
-{
-FractionBox["2", "3"],
-" ",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"0,1\""
-],
-" ",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"000,5\""
-]
-}
-],
-"-",
-RowBox[
-{
-"4",
-" ",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"0000,1\""
-]
-}
-],
-"+",
-RowBox[
-{
-"4",
-" ",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"0000,5\""
-]
-}
-],
-"+",
-RowBox[
-{
-"8",
-" ",
-SubscriptBox[
-TemplateBox[{"\"I\"", "\"0\""}, "Superscript"],
-"\"0000,7\""
-]
-}
-]
-}
-]
-}
-],
-"}"
-}
-]
-],
-"Output"
+"Code"
 ]
 },
-Open
+Closed
 ]
 ]
 },
@@ -15970,7 +13390,7 @@ RowBox[
 ]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -16109,7 +13529,7 @@ RowBox[{"{", RowBox[{"1", ",", "2"}], "}"}]
 ]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -16381,7 +13801,7 @@ RowBox[
 ]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -16604,7 +14024,7 @@ RowBox[{"RInv", ",", "4", ",", "rank", ",", "case"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -16640,7 +14060,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -16670,7 +14090,7 @@ RowBox[{"step_", "/;", RowBox[{"step", "<", "5"}]}]
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -16700,7 +14120,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -16770,7 +14190,7 @@ RowBox[{"RulesFor", "[", RowBox[{"inv", ",", "5"}], "]"}]
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -16834,7 +14254,7 @@ RowBox[{"RulesFor", "[", RowBox[{"inv", ",", "6"}], "]"}]
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -16858,7 +14278,7 @@ RowBox[{"expr_", ",", "step_"}],
 }
 ]
 ],
-"Input"
+"Code"
 ]
 },
 Closed
@@ -16892,7 +14312,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -16941,7 +14361,7 @@ RowBox[{"InvToPerm", "[", "inv", "]"}]
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -16953,7 +14373,7 @@ RowBox[{"-", RowBox[{"InvToPerm", "[", "info", "]"}]}]
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -17001,7 +14421,7 @@ RowBox[{"terms", ".", " ", "Need"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -17083,7 +14503,7 @@ RowBox[{"rank", ",", "case"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -17160,7 +14580,7 @@ RowBox[{"rank", ",", "case"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -17242,7 +14662,7 @@ RowBox[{"rank", ",", "case"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -17324,7 +14744,7 @@ RowBox[{"rank", ",", "case"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -17342,7 +14762,7 @@ RowBox[{"InvToPerm", ",", "1"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -17668,7 +15088,7 @@ RowBox[{"rank", ",", "case"}],
 }
 ]
 ],
-"Input"
+"Code"
 ]
 },
 Closed
@@ -17852,7 +15272,7 @@ RowBox[{"Minus", "/@", "a"}]
 ]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -17932,7 +15352,7 @@ RowBox[{"4", "dege"}]
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -17980,7 +15400,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -18028,7 +15448,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -18282,7 +15702,7 @@ RowBox[{"{", "}"}]
 ]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -18306,7 +15726,7 @@ RowBox[{"rperm", ",", "$CurvatureRelations"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -18421,7 +15841,7 @@ RowBox[{"Reverse", "[", "case", "]"}]
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -18536,7 +15956,7 @@ RowBox[{"Reverse", "[", "case", "]"}]
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -18608,7 +16028,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -18916,7 +16336,7 @@ RowBox[{"TFRicci", "[", "cd", "]"}]
 ]
 }
 ],
-"Input"
+"Code"
 ]
 },
 Closed
@@ -18983,7 +16403,7 @@ RowBox[{RowBox[{"InvToPerm", "[", "inv", "]"}], ",", "cr"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -19007,7 +16427,7 @@ RowBox[{"expr", ",", "$CurvatureRelations"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -19095,7 +16515,7 @@ RowBox[{"{", RowBox[{"1", ",", "2"}], "}"}]
 ]
 }
 ],
-"Input"
+"Code"
 ]
 },
 Closed
@@ -19127,7 +16547,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -19189,7 +16609,7 @@ RowBox[
 ]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -19288,7 +16708,7 @@ RowBox[
 ]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -19563,7 +16983,7 @@ RowBox[{"deg", "[", "expr", "]"}]
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -19604,7 +17024,7 @@ SuperscriptBox["g", "ab"],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -20112,7 +17532,7 @@ RowBox[{"expr", ",", "metric"}],
 ]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -20172,7 +17592,7 @@ RowBox[{"CovDOfMetric", "[", "metric", "]"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -20282,7 +17702,7 @@ RowBox[{"expr", ",", "metric"}],
 ]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -20353,9 +17773,8 @@ RowBox[{"CovDOfMetric", "[", "metric", "]"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
-Cell[BoxData[""], "Input"],
 Cell[
 BoxData[
 RowBox[
@@ -20527,12 +17946,11 @@ RowBox[{"expr", ",", "metric"}],
 ],
 "*)"
 }
-],
-"\[IndentingNewLine]"
+]
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -20790,7 +18208,7 @@ RowBox[{"expr", ",", "CD", ",", "metric"}],
 ";"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 "\[IndentingNewLine]",
 "\[IndentingNewLine]",
 RowBox[
@@ -20826,7 +18244,7 @@ RowBox[{"dual", " ", "permutation"}]
 "*)"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 "\[IndentingNewLine]",
 RowBox[
 {
@@ -21091,7 +18509,7 @@ RowBox[{"expression", ".", " ", "This"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -21123,7 +18541,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -21238,7 +18656,7 @@ RowBox[
 ]
 }
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -21287,7 +18705,7 @@ RowBox[{"Ricci", "[", "cd", "]"}]
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -21321,7 +18739,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -21498,388 +18916,7 @@ RowBox[{"a", ",", "c", ",", "b", ",", RowBox[{"-", "c"}]}],
 }
 ]
 ],
-"Input"
-],
-Cell[
-CellGroupData[
-{
-Cell[
-BoxData[
-RowBox[
-{
-"DispatchRules",
-"[",
-RowBox[
-{
-"RInv",
-",",
-"2",
-",",
-"2",
-",",
-RowBox[{"{", RowBox[{"0", ",", "0"}], "}"}]
-}
-],
-"]"
-}
-]
-],
-"Input"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-"\"Reading InvRules for step 2, rank \"",
-"\[InvisibleSpace]",
-"2",
-"\[InvisibleSpace]",
-"\" and case \"",
-"\[InvisibleSpace]",
-RowBox[{"{", RowBox[{"0", ",", "0"}], "}"}]
-}
-],
-"Reading InvRules for step 2, rank "2" and case "{0, 0},
-Editable -> False
-]
-],
-"Print"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-TagBox["Dispatch", "SummaryHead"],
-"[",
-DynamicModuleBox[
-{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"},
-TemplateBox[
-{
-PaneSelectorBox[
-{
-False ->
-GridBox[
-{
-{
-PaneBox[
-ButtonBox[
-DynamicBox[
-FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"]
-],
-ButtonFunction :> (Typeset`open$$ = True),
-Appearance -> None,
-BaseStyle -> { },
-Evaluator -> Automatic,
-Method -> "Preemptive"
-],
-Alignment -> {Center, Center},
-ImageSize ->
-Dynamic[
-{
-Automatic,
-Times[
-3.5,
-Times[
-CurrentValue["FontCapHeight"],
-AbsoluteCurrentValue[Magnification]^(-1)
-]
-]
-}
-]
-],
-GraphicsBox[
-{
-GrayLevel[0.5],
-PolygonBox[
-{
-{0.25, 0.5},
-{0.05, 0.35},
-{0.15, 0.35},
-{0.35, 0.5},
-{0.15, 0.65},
-{0.05, 0.65}
-}
-],
-PolygonBox[
-{
-{0.4, 0.5},
-{0.2, 0.35},
-{0.35, 0.35},
-{0.55, 0.5},
-{0.35, 0.65},
-{0.2, 0.65}
-}
-],
-PolygonBox[
-{
-{0.95, 0.5},
-{0.55, 0.1},
-{0.6, 0.35},
-{0.4, 0.35},
-{0.6, 0.5},
-{0.4, 0.65},
-{0.6, 0.65},
-{0.55, 0.9}
-}
-]
-},
-PlotRange -> {{-0.05, 1.05}, {-0.05, 1.05}},
-Background -> GrayLevel[0.93],
-FrameStyle -> Directive[Thickness[Tiny], GrayLevel[0.7]],
-Axes -> False,
-AspectRatio -> 1,
-ImageSize ->
-Dynamic[
-{
-Automatic,
-Times[
-3.5,
-Times[
-CurrentValue["FontCapHeight"],
-AbsoluteCurrentValue[Magnification]^(-1)
-]
-]
-}
-],
-Frame -> True,
-FrameTicks -> None,
-FrameStyle ->
-Directive[
-Opacity[0.5],
-Thickness[Tiny],
-RGBColor[0.36842, 0.50678, 0.7098]
-]
-],
-GridBox[
-{
-{
-RowBox[
-{
-TagBox["\"Length: \"", "SummaryItemAnnotation"],
-"\[InvisibleSpace]",
-TagBox["1", "SummaryItem"]
-}
-]
-}
-},
-GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
-AutoDelete -> False,
-GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
-GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
-BaseStyle -> {
-ShowStringCharacters -> False,
-NumberMarks -> False,
-PrintPrecision -> 3,
-ShowSyntaxStyles -> False
-}
-]
-}
-},
-GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}},
-AutoDelete -> False,
-GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
-BaselinePosition -> {1, 1}
-],
-True ->
-GridBox[
-{
-{
-PaneBox[
-ButtonBox[
-DynamicBox[
-FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxCloser"]
-],
-ButtonFunction :> (Typeset`open$$ = False),
-Appearance -> None,
-BaseStyle -> { },
-Evaluator -> Automatic,
-Method -> "Preemptive"
-],
-Alignment -> {Center, Center},
-ImageSize ->
-Dynamic[
-{
-Automatic,
-Times[
-3.5,
-Times[
-CurrentValue["FontCapHeight"],
-AbsoluteCurrentValue[Magnification]^(-1)
-]
-]
-}
-]
-],
-GraphicsBox[
-{
-GrayLevel[0.5],
-PolygonBox[
-{
-{0.25, 0.5},
-{0.05, 0.35},
-{0.15, 0.35},
-{0.35, 0.5},
-{0.15, 0.65},
-{0.05, 0.65}
-}
-],
-PolygonBox[
-{
-{0.4, 0.5},
-{0.2, 0.35},
-{0.35, 0.35},
-{0.55, 0.5},
-{0.35, 0.65},
-{0.2, 0.65}
-}
-],
-PolygonBox[
-{
-{0.95, 0.5},
-{0.55, 0.1},
-{0.6, 0.35},
-{0.4, 0.35},
-{0.6, 0.5},
-{0.4, 0.65},
-{0.6, 0.65},
-{0.55, 0.9}
-}
-]
-},
-PlotRange -> {{-0.05, 1.05}, {-0.05, 1.05}},
-Background -> GrayLevel[0.93],
-FrameStyle -> Directive[Thickness[Tiny], GrayLevel[0.7]],
-Axes -> False,
-AspectRatio -> 1,
-ImageSize ->
-Dynamic[
-{
-Automatic,
-Times[
-3.5,
-Times[
-CurrentValue["FontCapHeight"],
-AbsoluteCurrentValue[Magnification]^(-1)
-]
-]
-}
-],
-Frame -> True,
-FrameTicks -> None,
-FrameStyle ->
-Directive[
-Opacity[0.5],
-Thickness[Tiny],
-RGBColor[0.36842, 0.50678, 0.7098]
-]
-],
-GridBox[
-{
-{
-RowBox[
-{
-TagBox["\"Length: \"", "SummaryItemAnnotation"],
-"\[InvisibleSpace]",
-TagBox["1", "SummaryItem"]
-}
-]
-},
-{
-RowBox[
-{
-TagBox["\"Rules:\"", "SummaryItemAnnotation"],
-"\[InvisibleSpace]",
-TagBox["\"\"", "SummaryItem"]
-}
-]
-},
-{
-TagBox[
-TagBox[
-GridBox[
-{
-{
-RowBox[
-{
-SubscriptBox[
-TemplateBox[
-{"\"I\"", "\"2\""},
-"Superscript",
-SyntaxForm -> SuperscriptBox
-],
-"\"00,5\""
-],
-"\[Rule]",
-FractionBox[
-SubscriptBox[
-TemplateBox[
-{"\"I\"", "\"2\""},
-"Superscript",
-SyntaxForm -> SuperscriptBox
-],
-"\"00,4\""
-],
-"2"
-]
-}
-]
-}
-},
-GridBoxAlignment -> {"Columns" -> {{Left}}},
-DefaultBaseStyle -> "Column",
-GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}
-],
-"Column"
-],
-"SummaryItem"
-]
-}
-},
-GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
-AutoDelete -> False,
-GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
-GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
-BaseStyle -> {
-ShowStringCharacters -> False,
-NumberMarks -> False,
-PrintPrecision -> 3,
-ShowSyntaxStyles -> False
-}
-]
-}
-},
-GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}},
-AutoDelete -> False,
-GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
-BaselinePosition -> {1, 1}
-]
-},
-Dynamic[Typeset`open$$],
-ImageSize -> Automatic
-]
-},
-"SummaryPanel"
-],
-DynamicModuleValues :> { }
-],
-"]"
-}
-],
-Dispatch[
-{RInv[2, {0, 0}, 5] -> Rational[1, 2]*RInv[2, {0, 0}, 4]}
-],
-Editable -> False,
-SelectWithContents -> True,
-Selectable -> False
-]
-],
-"Output"
-]
-},
-Open
-]
+"Code"
 ]
 },
 Closed
@@ -21985,7 +19022,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -22059,7 +19096,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -22133,7 +19170,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -22201,7 +19238,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -22274,7 +19311,7 @@ RowBox[{"metric", ",", "indexlist"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -22339,368 +19376,7 @@ RowBox[{"PermToInv", ",", "1"}],
 ]
 }
 ],
-"Input"
-],
-Cell[
-CellGroupData[
-{
-Cell[
-BoxData[
-RowBox[
-{
-"DispatchRules",
-"[",
-RowBox[
-{
-"RInv",
-",",
-"2",
-",",
-"2",
-",",
-RowBox[{"{", RowBox[{"0", ",", "0"}], "}"}]
-}
-],
-"]"
-}
-]
-],
-"Input"
-],
-Cell[
-BoxData[
-InterpretationBox[
-RowBox[
-{
-TagBox["Dispatch", "SummaryHead"],
-"[",
-DynamicModuleBox[
-{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"},
-TemplateBox[
-{
-PaneSelectorBox[
-{
-False ->
-GridBox[
-{
-{
-PaneBox[
-ButtonBox[
-DynamicBox[
-FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"]
-],
-ButtonFunction :> (Typeset`open$$ = True),
-Appearance -> None,
-BaseStyle -> { },
-Evaluator -> Automatic,
-Method -> "Preemptive"
-],
-Alignment -> {Center, Center},
-ImageSize ->
-Dynamic[
-{
-Automatic,
-Times[
-3.5,
-Times[
-CurrentValue["FontCapHeight"],
-AbsoluteCurrentValue[Magnification]^(-1)
-]
-]
-}
-]
-],
-GraphicsBox[
-{
-GrayLevel[0.5],
-PolygonBox[
-{
-{0.25, 0.5},
-{0.05, 0.35},
-{0.15, 0.35},
-{0.35, 0.5},
-{0.15, 0.65},
-{0.05, 0.65}
-}
-],
-PolygonBox[
-{
-{0.4, 0.5},
-{0.2, 0.35},
-{0.35, 0.35},
-{0.55, 0.5},
-{0.35, 0.65},
-{0.2, 0.65}
-}
-],
-PolygonBox[
-{
-{0.95, 0.5},
-{0.55, 0.1},
-{0.6, 0.35},
-{0.4, 0.35},
-{0.6, 0.5},
-{0.4, 0.65},
-{0.6, 0.65},
-{0.55, 0.9}
-}
-]
-},
-PlotRange -> {{-0.05, 1.05}, {-0.05, 1.05}},
-Background -> GrayLevel[0.93],
-FrameStyle -> Directive[Thickness[Tiny], GrayLevel[0.7]],
-Axes -> False,
-AspectRatio -> 1,
-ImageSize ->
-Dynamic[
-{
-Automatic,
-Times[
-3.5,
-Times[
-CurrentValue["FontCapHeight"],
-AbsoluteCurrentValue[Magnification]^(-1)
-]
-]
-}
-],
-Frame -> True,
-FrameTicks -> None,
-FrameStyle ->
-Directive[
-Opacity[0.5],
-Thickness[Tiny],
-RGBColor[0.36842, 0.50678, 0.7098]
-]
-],
-GridBox[
-{
-{
-RowBox[
-{
-TagBox["\"Length: \"", "SummaryItemAnnotation"],
-"\[InvisibleSpace]",
-TagBox["1", "SummaryItem"]
-}
-]
-}
-},
-GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
-AutoDelete -> False,
-GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
-GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
-BaseStyle -> {
-ShowStringCharacters -> False,
-NumberMarks -> False,
-PrintPrecision -> 3,
-ShowSyntaxStyles -> False
-}
-]
-}
-},
-GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}},
-AutoDelete -> False,
-GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
-BaselinePosition -> {1, 1}
-],
-True ->
-GridBox[
-{
-{
-PaneBox[
-ButtonBox[
-DynamicBox[
-FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxCloser"]
-],
-ButtonFunction :> (Typeset`open$$ = False),
-Appearance -> None,
-BaseStyle -> { },
-Evaluator -> Automatic,
-Method -> "Preemptive"
-],
-Alignment -> {Center, Center},
-ImageSize ->
-Dynamic[
-{
-Automatic,
-Times[
-3.5,
-Times[
-CurrentValue["FontCapHeight"],
-AbsoluteCurrentValue[Magnification]^(-1)
-]
-]
-}
-]
-],
-GraphicsBox[
-{
-GrayLevel[0.5],
-PolygonBox[
-{
-{0.25, 0.5},
-{0.05, 0.35},
-{0.15, 0.35},
-{0.35, 0.5},
-{0.15, 0.65},
-{0.05, 0.65}
-}
-],
-PolygonBox[
-{
-{0.4, 0.5},
-{0.2, 0.35},
-{0.35, 0.35},
-{0.55, 0.5},
-{0.35, 0.65},
-{0.2, 0.65}
-}
-],
-PolygonBox[
-{
-{0.95, 0.5},
-{0.55, 0.1},
-{0.6, 0.35},
-{0.4, 0.35},
-{0.6, 0.5},
-{0.4, 0.65},
-{0.6, 0.65},
-{0.55, 0.9}
-}
-]
-},
-PlotRange -> {{-0.05, 1.05}, {-0.05, 1.05}},
-Background -> GrayLevel[0.93],
-FrameStyle -> Directive[Thickness[Tiny], GrayLevel[0.7]],
-Axes -> False,
-AspectRatio -> 1,
-ImageSize ->
-Dynamic[
-{
-Automatic,
-Times[
-3.5,
-Times[
-CurrentValue["FontCapHeight"],
-AbsoluteCurrentValue[Magnification]^(-1)
-]
-]
-}
-],
-Frame -> True,
-FrameTicks -> None,
-FrameStyle ->
-Directive[
-Opacity[0.5],
-Thickness[Tiny],
-RGBColor[0.36842, 0.50678, 0.7098]
-]
-],
-GridBox[
-{
-{
-RowBox[
-{
-TagBox["\"Length: \"", "SummaryItemAnnotation"],
-"\[InvisibleSpace]",
-TagBox["1", "SummaryItem"]
-}
-]
-},
-{
-RowBox[
-{
-TagBox["\"Rules:\"", "SummaryItemAnnotation"],
-"\[InvisibleSpace]",
-TagBox["\"\"", "SummaryItem"]
-}
-]
-},
-{
-TagBox[
-TagBox[
-GridBox[
-{
-{
-RowBox[
-{
-SubscriptBox[
-TemplateBox[
-{"\"I\"", "\"2\""},
-"Superscript",
-SyntaxForm -> SuperscriptBox
-],
-"\"00,5\""
-],
-"\[Rule]",
-FractionBox[
-SubscriptBox[
-TemplateBox[
-{"\"I\"", "\"2\""},
-"Superscript",
-SyntaxForm -> SuperscriptBox
-],
-"\"00,4\""
-],
-"2"
-]
-}
-]
-}
-},
-GridBoxAlignment -> {"Columns" -> {{Left}}},
-DefaultBaseStyle -> "Column",
-GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}
-],
-"Column"
-],
-"SummaryItem"
-]
-}
-},
-GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
-AutoDelete -> False,
-GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
-GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
-BaseStyle -> {
-ShowStringCharacters -> False,
-NumberMarks -> False,
-PrintPrecision -> 3,
-ShowSyntaxStyles -> False
-}
-]
-}
-},
-GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}},
-AutoDelete -> False,
-GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
-BaselinePosition -> {1, 1}
-]
-},
-Dynamic[Typeset`open$$],
-ImageSize -> Automatic
-]
-},
-"SummaryPanel"
-],
-DynamicModuleValues :> { }
-],
-"]"
-}
-],
-Dispatch[
-{RInv[2, {0, 0}, 5] -> Rational[1, 2]*RInv[2, {0, 0}, 4]}
-],
-Editable -> False,
-SelectWithContents -> True,
-Selectable -> False
-]
-],
-"Output"
-]
-},
-Open
-]
+"Code"
 ]
 },
 Closed
@@ -22732,7 +19408,7 @@ RowBox[{"expr", ",", "$Metrics"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -22763,7 +19439,7 @@ RowBox[{"RiemannToInv", ",", "expr", ",", "metrics"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -22803,7 +19479,7 @@ RowBox[{"expr", ",", "metric"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -22871,7 +19547,7 @@ RowBox[{"{", RowBox[{"1", ",", "2"}], "}"}]
 ]
 }
 ],
-"Input"
+"Code"
 ]
 },
 Closed
@@ -22913,7 +19589,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -22942,7 +19618,7 @@ RowBox[{RowBox[{"RiemannSimplify", "[", "#", "]"}], "&"}],
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -22983,7 +19659,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -23036,7 +19712,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -23101,7 +19777,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -23169,7 +19845,7 @@ RowBox[
 }
 ]
 ],
-"Input"
+"Code"
 ],
 Cell[
 BoxData[
@@ -23193,7 +19869,61 @@ RowBox[{"{", RowBox[{"1", ",", "3"}], "}"}]
 }
 ]
 ],
-"Input"
+"Code"
+]
+},
+Closed
+]
+]
+},
+Closed
+]
+],
+Cell[
+CellGroupData[
+{
+Cell["End Package", "Section"],
+Cell[
+BoxData[
+{
+RowBox[{RowBox[{"End", "[", "]"}], ";"}],
+"\n",
+RowBox[
+{RowBox[{"Protect", "[", "\"xAct`TInvar`*\"", "]"}], ";"}
+],
+"\n",
+RowBox[
+{
+RowBox[
+{
+"Unprotect",
+"[",
+RowBox[
+{
+"xAct`TInvar`dim",
+",",
+"xAct`TInvar`sigma",
+",",
+"xAct`TInvar`$InvSimplifyLevel",
+",",
+"xAct`TInvar`$CurvatureRelations",
+",",
+"$ExpandedCommuteOrder12Q",
+",",
+"xAct`TInvar`TInvarDirectory"
+}
+],
+"]"
+}
+],
+";"
+}
+],
+"\n",
+RowBox[{RowBox[{"EndPackage", "[", "]"}], ";"}]
+}
+],
+"Code"
 ]
 },
 Closed
@@ -23204,10 +19934,7 @@ Open
 ]
 ]
 },
-Open
-]
-]
-},
+AutoGeneratedPackage -> Automatic,
 DockedCells -> { },
 FrontEndVersion -> "13.3 for Mac OS X x86 (64-bit) (June 3, 2023)",
 StyleDefinitions -> "Default.nb",
