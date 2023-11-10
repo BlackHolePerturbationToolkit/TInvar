@@ -257,7 +257,7 @@ readline[string_]:=StringTake[string,{movetofirst@positionof[string," := "],Stri
 ReadInvarPerms[filename_,"Maple"]:=ToExpression/@replacebrackets/@readline/@CheckImport[StringJoin[$TInvarDirectory,"/",filename],"Lines"];
 
 
-ReadInvarRules[filename_,"Mathematica"]:=ToExpression/@CheckImport[StringJoin[$TInvarDirectory,filename],"Lines"];
+ReadInvarRules[filename_,"Mathematica"]:=ToExpression/@CheckImport[FileNameJoin[{$TInvarDirectory,filename}],"Lines"];
 
 
 (*Come back to this when I have all the steps*)

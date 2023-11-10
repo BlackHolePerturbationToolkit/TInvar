@@ -2990,9 +2990,11 @@ RowBox[
 {
 RowBox[
 {
-"StringJoin",
+"FileNameJoin",
 "[",
-RowBox[{"$TInvarDirectory", ",", "filename"}],
+RowBox[
+{"{", RowBox[{"$TInvarDirectory", ",", "filename"}], "}"}
+],
 "]"
 }
 ],
