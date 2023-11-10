@@ -61,6 +61,10 @@ Print["These packages come with ABSOLUTELY NO WARRANTY; for details type Disclai
 Print[xAct`xCore`Private`bars]]
 
 
+(* FIXME: make this public as a hack - need to find a better solution*)
+metric;
+
+
 (* ::Input::Initialization:: *)
 $TInvarDirectory::usage="$TInvarDirectory is a global variable giving the directory in which the package file and the database can be found.";
 
@@ -1048,5 +1052,5 @@ SetNumberOfArguments[RiemannSimplify,{1,3}];
 
 End[];
 Protect["xAct`TInvar`*"];
-Unprotect[xAct`TInvar`dim,xAct`TInvar`sigma,xAct`TInvar`$InvSimplifyLevel,xAct`TInvar`$CurvatureRelations,$ExpandedCommuteOrder12Q,xAct`TInvar`TInvarDirectory];
+Unprotect[xAct`TInvar`metric,xAct`TInvar`dim,xAct`TInvar`sigma,xAct`TInvar`$InvSimplifyLevel,xAct`TInvar`$CurvatureRelations,$ExpandedCommuteOrder12Q,xAct`TInvar`TInvarDirectory];
 EndPackage[];
