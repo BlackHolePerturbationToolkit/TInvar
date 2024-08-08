@@ -1,0 +1,31 @@
+<|
+    "Files"
+    ->
+    {
+        <|
+            "File"
+            ->
+            File[
+                "Kernel/TInvar.m"
+            ]
+            ,
+            "Hash"
+            ->
+            "5f798f40ec281f382036879baf7a6d15a3518975b1ccfd7c8f1e16bce3fc7ab6"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Kernel/TInvar.nb"
+            ]
+            ,
+            "Hash"
+            ->
+            "7d98aa49ca22a410d9dd02688428eb8d0db3ae2ebe19a25cdea7cd31a6805e0b"
+                
+        |>
+    }
+|>
