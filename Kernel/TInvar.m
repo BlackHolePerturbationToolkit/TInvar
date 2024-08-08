@@ -62,7 +62,7 @@ Print[xAct`xCore`Private`bars]]
 
 
 (* FIXME: make this public as a hack - need to find a better solution*)
-metric;
+(*metric;*)
 
 
 (* ::Input::Initialization:: *)
@@ -264,13 +264,27 @@ ReadInvarPerms[filename_,"Maple"]:=ToExpression/@replacebrackets/@readline/@Chec
 ReadInvarRules[filename_,"Mathematica"]:=ToExpression/@CheckImport[FileNameJoin[{$TInvarDirectory,filename}],"Lines"];
 
 
-(*Come back to this when I have all the steps*)
+RemoveRInvRules[step_Integer,rank_Integer,degree_Integer,dim___]:=RemoveRInvRules[step,rank,Table[0,{degree}]];
+RemoveRInvRules[step_Integer,rank_Integer,case_List,dim___]:=(
+Unset[DispatchRules[RInv,step,rank, case,dim]];
+Unprotect[RInvRules];
+Unset[RInvRules[step,rank,case,dim]];
+Protect[RInvRules];
+);
+
+RemoveDualRInvRules[step_Integer,rank_Integer,degree_Integer,dim___]:=RemoveDualRInvRules[step,rank,Table[0,{degree}]];
+RemoveDualRInvRules[step_Integer,rank_Integer,case_List,dim___]:=(
+Unset[DispatchRules[DualRInv,step,rank, case,dim]];
+Unprotect[DualRInvRules];
+Unset[DualRInvRules[step,rank,case,dim]];
+Protect[DualRInvRules];
+);
 
 
 (*Need to test this. No changes made*)
 
 
-addRdep[Rule[inv_[case_,count_],rhs_]]:=Rule[inv[metric_,indexlist_][case,count],rhs/.{RInv->RInv[metric],DualRInv->DualRInv[metric],WInv->WInv[metric],DualWInv->DualWInv[metric]}]
+addRdep[Rule[inv_[case_ ,count_],rhs_]]:=Rule[inv[metric_ ,indexlist_][case,count],rhs/.{RInv->RInv[metric],DualRInv->DualRInv[metric],WInv->WInv[metric],DualWInv->DualWInv[metric]}]
 
 
 RInvs[metric_,indexlist_IndexList][args__]:=RInvs[args]/.RInv->RInv[metric];WInvs[metric_,indexlist_IndexList][args__]:=WInvs[args]/.WInv->WInv[metric];
@@ -647,7 +661,7 @@ WInvRules[1,rank_,case_]:=RInvRules[1,rank,case]/.RInv->WInv;
 DualWInvRules[1,rank_,case_]:=DualRInvRules[1,rank,case]/.DualRInv->DualWInv;
 
 
-Examples with invariants
+(*Examples with invariants*)
 
 
 (*Add in the rest of the rules later*)
@@ -673,6 +687,10 @@ ProtSet[DualRInvRules[2,rank,case],result]
 ];
 
 
+WInvRules[2,rank_,case_]:=RInvRules[2,rank,case]/.RInv->WInv;
+DualWInvRules[2,rank_,case_]:=DualRInvRules[2,rank,case]/.DualRInv->DualWInv;
+
+
 RInvs[3,rank_,case_]:=ProtSet[RInvs[3,rank,case],Complement[RInvs[2,rank,case],First/@RInvRules[3,rank,case]]];
 DualRInvs[3,rank_,case_]:=ProtSet[DualRInvs[3,rank,case],Complement[DualRInvs[2,rank,case],First/@DualRInvRules[3,rank,case]]];
 
@@ -687,28 +705,43 @@ ProtSet[RInvRules[3,rank,case],result]
 
 DualRInvRules[3,rank_,case_List]:=Module[{result},
 MaxDualIndex[rank,case];
-Print["Reading InvRules for step 3, rank ",rank," and case ",case];
+Print["Reading DualInvRules for step 3, rank ",rank," and case ",case];
 result=ReadInvarRules[$DataBaseDir<>"3/"<>dualfilename[3,rank,case],"Mathematica"];
 ProtSet[DualRInvRules[3,rank,case],result]
 ];
+
+
+WInvRules[3,rank_,case_]:=RInvRules[3,rank,case]/.RInv->WInv;
+DualWInvRules[3,rank_,case_]:=DualRInvRules[3,rank,case]/.DualRInv->DualWInv;
 
 
 RInvs[4,rank_,case_]:=ProtSet[RInvs[4,rank,case],Complement[RInvs[3,rank,case],First/@RInvRules[4,rank,case]]];
 DualRInvs[4,rank_,case_]:=ProtSet[DualRInvs[4,rank,case],Complement[DualRInvs[3,rank,case],First/@DualRInvRules[4,rank,case]]];
 
 
-RInvRules[4,rank_,case_List]:=Module[{result},
+$ExpandedCommuteOrder12Q=False;
+
+
+extendedQ[case_]:=$ExpandedCommuteOrder12Q/;MemberQ[InvarCases[0,12,{1,2,3}],case];
+extendedQ[case_]:=True;
+
+
+RInvRules[4,rank_,case_List]:=Module[{result,eQ=If[extendedQ[case],"","NE"]},
 MaxIndex[case];
-Print["Reading InvRules for step 4, rank ",rank," and case ",case];
-result=ReadInvarRules[$DataBaseDir<>"4/"<>filename[4,rank,case],"Mathematica"];
+Print["Reading "<>eQ<>"InvRules for step 4, rank ",rank," and case ",case];
+result=ReadInvarRules[$DataBaseDir<>"4/"<>filename[4,rank,case]<>eQ,"Mathematica"];
 ProtSet[RInvRules[4,rank,case],result]
 ];
 DualRInvRules[4,rank_,case_List]:=Module[{result},
 MaxDualIndex[rank,case];
-Print["Reading InvRules for step 4, rank ",rank," and case ",case];
+Print["Reading DualInvRules for step 4, rank ",rank," and case ",case];
 result=ReadInvarRules[$DataBaseDir<>"4/"<>dualfilename[4,rank,case],"Mathematica"];
 ProtSet[DualRInvRules[4,rank,case],result]
 ];
+
+
+WInvRules[4,rank_,case_]:=RInvRules[4,rank,case]/.RInv->WInv;
+DualWInvRules[4,rank_,case_]:=DualRInvRules[4,rank,case]/.DualRInv->DualWInv;
 
 
 RInvs[5,rank_,case_]:=ProtSet[RInvs[5,rank,case],Complement[RInvs[4,rank,case],First/@RInvRules[5,rank,case]]];
@@ -734,10 +767,14 @@ DualRInvRules[5,rank_,case_List]:=DualRInvRules[5,rank,case,$DefaultDim];
 DualRInvRules[5,rank_,case_List,dim_]:=Module[{result},
 MaxDualIndex[rank,case];
 If[rank>0,result={};,
-Print["Reading InvRules for step 5, rank ",rank," and case ",case];
+Print["Reading DualInvRules for step 5, rank ",rank," and case ",case];
 result=ReadInvarRules[$DataBaseDir<>"5_"<>ToString[dim]<>"/"<>dualfilename[5,rank,case,dim],"Mathematica"]];
 ProtSet[DualRInvRules[5,rank,case,dim],result]
 ];
+
+
+WInvRules[5,0,case_,dim_]:=RInvRules[5,0,case,dim]/.RInv->WInv;
+DualWInvRules[5,0,case_,dim_]:=DualRInvRules[5,0,case,dim]/.DualRInv->DualWInv;
 
 
 RInvs[6,rank_,case_]:=RInvs[6,rank,case,$DefaultDim];
@@ -757,18 +794,22 @@ ProtSet[RInvRules[6,rank,case,dim],result]
 ]];
 
 
+WInvRules[6,0,case_,dim_]:=RInvRules[6,0,case,dim]/.RInv->WInv;
+DualWInvRules[6,0,case_,dim_]:=DualRInvRules[6,0,case,dim]/.DualRInv->DualWInv;
+
+
 InvSimplify[expr_]:=InvSimplify[expr,$InvSimplifyLevel];
 InvSimplify[expr_,1]:=expr;
 
 
-InvSimplify[expr_,step_]:=Expand[expr/.{inv:(RInv|WInv)[metric_,Inds_IndexList][rank_,_,_]:>Block[{dim=DimOfVBundle@VBundleOfMetric@metric,sigma=SignDetOfMetric[metric],inds=Inds},InvSimplify1[inv,step,dim]] }];
+InvSimplify[expr_,step_]:=Expand[expr/.{inv:(RInv|DualRInv|WInv|DualWInv)[metric_,Inds_IndexList][rank_,_,_]:>Block[{dim=DimOfVBundle@VBundleOfMetric@metric,sigma=SignDetOfMetric[metric],inds=Inds},InvSimplify1[inv,step,dim]] }];
 SetNumberOfArguments[InvSimplify,{1,2}];
 
 
 InvSimplify1[inv_,1,_]:=inv;
 InvSimplify1[(DualRInv|DualWInv)[_,_][_,_,_],_,dim_Integer]:=Print["Duals are only handled in dimension 4."]/;dim=!=4;
 InvSimplify1[_,5|6,dim_Integer]:=Print["Levels 5 and 6 of simplication are only possible in dimension 4."]/;dim=!=4;
-InvSimplify1[inv:_[_,inds_IndexList][_,_,_],step:(2|3|4|5|6),_]:=Expand[InvSimplify56[InvSimplify234[inv,step],step]/.{RInv->RInv[metric,inds],DualRInv->DualRInv[metric,inds],WInv->WInv[metric,inds],DualWInv->DualWInv[metric,inds]}];
+InvSimplify1[inv:_[metric_,inds_IndexList][_,_,_],step:(2|3|4|5|6),_]:=Expand[InvSimplify56[InvSimplify234[inv,step],step]/.{RInv->RInv[metric,inds],DualRInv->DualRInv[metric,inds],WInv->WInv[metric,inds],DualWInv->DualWInv[metric,inds]}];
 InvSimplify1[inv_,step_,dim_]:=Print["Invalid level of simplification: ",step];
 
 
@@ -778,6 +819,30 @@ newexpr=newexpr/.DispatchRules[RInv,2,rank,case];
 newexpr=If[step>=3,newexpr/.DispatchRules[RInv,3,rank,case],newexpr];
 newexpr=If[step>=4,newexpr/.DispatchRules[RInv,4,rank,case],newexpr]];
 newexpr
+];
+
+InvSimplify234[DualRInv[metric_,indexlist_IndexList][rank_,case_,count_],step_]:=Module[{inds=indexlist,newexpr=DualRInv[rank,case,count]},
+If[FreeQ[DualRInvs[ step,rank,case],newexpr],
+newexpr=newexpr/.DispatchRules[DualRInv,2,rank,case];
+newexpr=If[step>=3,newexpr/.DispatchRules[DualRInv,3,rank,case],newexpr];
+newexpr=If[step>=4,newexpr/.DispatchRules[DualRInv,4,rank,case],newexpr]];
+newexpr
+];
+
+InvSimplify234[WInv[metric_,indexlist_IndexList][rank_,case_,count_],step_]:=
+If[MemberQ[RInvs[ step,rank,case],RInv[rank,case,count]],WInv[rank,case,count],
+Module[{newexpr=RInv[rank,case,count]/.DispatchRules[RInv,2,rank,case]/.RInv->WInv},
+newexpr=If[step>=3,newexpr/.DispatchRules[WInv,3,rank,case],newexpr];
+newexpr=If[step>=4,newexpr/.DispatchRules[WInv,4,rank,case],newexpr];
+newexpr]
+];
+
+InvSimplify234[DualWInv[metric_,indexlist_IndexList][rank_,case_,count_],step_]:=
+If[MemberQ[DualRInvs[ step,rank,case],DualRInv[rank,case,count]],DualWInv[rank,case,count],
+Module[{newexpr=DualRInv[rank,case,count]/.DispatchRules[DualRInv,2,rank,case]/.DualRInv->DualWInv},
+newexpr=If[step>=3,newexpr/.DispatchRules[DualWInv,3,rank,case],newexpr];
+newexpr=If[step>=4,newexpr/.DispatchRules[DualWInv,4,rank,case],newexpr];
+newexpr]
 ];
 
 
@@ -817,10 +882,10 @@ InvToPerm[RInv[metric_,inds_IndexList][rank_,case_,count_]]:=RPerm[metric][{case
 InvToPerm[WInv[metric_,inds_IndexList][rank_,case_,count_]]:=WPerm[metric][{case,0},{rank},inds,toCycles[RInv[rank,case,count]/.DispatchRInvToPermRules[rank,case]]]
 
 
-InvToPerm[DualRInv[metric_,inds_IndexList][rank_,case_,count_]]:=RPerm[metric][{case,1},{rank},inds,toCycles[RInv[rank,case,count]/.DispatchDualRInvToPermRules[rank,case]]];
+InvToPerm[DualRInv[metric_,inds_IndexList][rank_,case_,count_]]:=RPerm[metric][{case,1},{rank},inds,toCycles[DualRInv[rank,case,count]/.DispatchDualRInvToPermRules[rank,case]]];
 
 
-InvToPerm[DualWInv[metric_,inds_IndexList][rank_,case_,count_]]:=WPerm[metric][{case,1},{rank},inds,toCycles[RInv[rank,case,count]/.DispatchDualRInvToPermRules[rank,case]]];
+InvToPerm[DualWInv[metric_,inds_IndexList][rank_,case_,count_]]:=WPerm[metric][{case,1},{rank},inds,toCycles[DualRInv[rank,case,count]/.DispatchDualRInvToPermRules[rank,case]]];
 
 
 SetNumberOfArguments[InvToPerm,1];
@@ -842,7 +907,7 @@ IndexList@@Flatten@Transpose[{upinds,Minus/@upinds}]]
 canon[metric_]:=IndexList@@Flatten@Transpose[{a=upindices[metric],Minus/@a}];*)
 
 
-translate[RPerm[metric_][{case_,dege_},{frees_},index_IndexList,perm_]]:=First@TranslatePerm[perm,{Images,4Length[case]+Plus@@case+4dege}];
+translate[(RPerm|WPerm)[metric_][{case_,dege_},{frees_},index_IndexList,perm_]]:=First@TranslatePerm[perm,{Images,4Length[case]+Plus@@case+4dege}];
 
 
 RPerm[metric_][info_,frees_,indexlist_,-perm_]:=-RPerm[metric][info,frees,indexlist,perm];
@@ -865,6 +930,12 @@ PermToRiemann[rperm:RPerm[metric_][{case_,dege_},{0},free_IndexList,_],cr_]:=ToR
 PermToRiemann[rperm:RPerm[metric_][{case_,dege_},{rank_},free_IndexList,_],cr_]:=ToRicci[metric,cr,True][riemannof[metric,dege,List@@IndexSort[Join[free,canon[metric]]][[translate[rperm]]],Reverse[case]]];
 
 
+PermToRiemann[wperm:WPerm[metric_][{case_,dege_},{0},free_IndexList,_],cr_]:=ToWeyl[ToRicci[metric,cr,False][riemannof[metric,dege,List@@IndexSort[Join[free,canon[metric]]][[translate[wperm]]],Reverse[case]]],CovDOfMetric[metric]];
+
+
+PermToRiemann[wperm:WPerm[metric_][{case_,dege_},{rank_},free_IndexList,_],cr_]:=ToWeyl[ToRicci[metric,cr,True][riemannof[metric,dege,List@@IndexSort[Join[free,canon[metric]]][[translate[wperm]]],Reverse[case]]],CovDOfMetric[metric]];
+
+
 (*To Ricci function needs to be written for free indices Here the thrid agrument is True if the expression is a tensor and False if it is a scalar*)
 
 
@@ -873,7 +944,6 @@ ToRicci[metric_,False,True][expr_]:=expr;
 ToRicci[metric_,True,False][expr_]:=Scalar@ContractMetric[expr/.CurvatureRelations[CovDOfMetric[metric],Riemann],metric]/.CurvatureRelations[CovDOfMetric[metric],Ricci];
 ToWeyl[expr_,cd_]:=expr/.{Riemann[cd]:>Weyl[cd],Ricci[cd]:>TFRicci[cd]};
 ToRicci[metric_,True,True][expr_]:=ContractMetric[expr/.CurvatureRelations[CovDOfMetric[metric],Riemann],metric]/.CurvatureRelations[CovDOfMetric[metric],Ricci];
-ToWeyl[expr_,cd_]:=expr/.{Riemann[cd]:>Weyl[cd],Ricci[cd]:>TFRicci[cd]};
 
 
 InvToRiemann1[cr_][inv:(RInv|DualRInv|WInv|DualWInv)[_,_][_,_,_]]:=PermToRiemann[InvToPerm[inv],cr];
@@ -949,6 +1019,7 @@ RiemannToPerm1[Scalar[expr_],metric_Symbol]:=arrange[expr,degrees[expr,CovDOfMet
 
 RiemannToPerm1[Monomial[expr_],metric_Symbol]:=arrange[expr,degrees[expr,CovDOfMetric[metric],metric],metric];
 RiemannToPerm1[Power[expr_,n_Integer],metric_Symbol]:=Power[RiemannToPerm1[expr,metric],n];
+RiemannToPerm1[expr_,x_]:=expr;
 
 
 RiemannToPerm1[tensor_Symbol[],metric_Symbol]:=RPerm[metric][{{0},0},{0},IndexList[],xAct`xPerm`Cycles[{2,3}]]/;tensor===RicciScalar[CovDOfMetric[metric]];
@@ -964,9 +1035,9 @@ RiemannToPerm2[expr_,metric_Symbol]:=HoldForm[arrange[expr,degrees[expr,CovDOfMe
 arrange[0,_,_]:=0;
 arrange[expr_,Infinity,_]:=expr;
 (* 1. There is Ricci or RicciScalar: convert to Riemann *)
-HoldPattern[ arrange[expr_,casePlus[{Ricci|RicciScalar,m__},c___],metric_]]:=arrange[ScreenDollarIndices[RicciToRiemann[expr,CovDOfMetric[metric]]],casePlus[{Riemann,m},c],metric];
+HoldPattern[arrange[expr_,casePlus[{Ricci|RicciScalar,m__},c___],metric_]]:=arrange[RicciToRiemann[expr,CovDOfMetric[metric]],casePlus[{Riemann,m},c],metric];
 
-arrange[metric[a_,b_]expr_,casePlus[Infinity,{Riemann,m__},c___],metric_Symbol]:=metric[a,b]arrange[expr,degrees[expr,CD,metric],metric];
+
 
 
 (* 2a. There are only Riemanns: compute non-dual permutation *)
@@ -974,8 +1045,28 @@ arrange[metric[a_,b_]expr_,casePlus[Infinity,{Riemann,m__},c___],metric_Symbol]:
 (*Change here: Get indicesof the expression and the rank of the tensor*)
 HoldPattern[arrange[expr_,casePlus[{Riemann,Rcase__}],metric_]]:=With[{canonical={#[[1]],#[[2,1,1]],frees={Length[IndicesOf[Free][expr]]}}&@Reap[ToCanonical[expr],"NewIndices"]},arrange1[canonical,{Sort[{Rcase}],0},metric]];
 (* 4. Final arrangements *)
-
+HoldPattern[arrange[expr_,casePlus[{Riemann,Rcase__},{epsilon,0}],metric_]]:=With[{epsilonname=epsilon[metric]},Module[{result},
+TagSet[epsilonname,xSortPrecedence[epsilonname],Infinity];
+With[{canonical={#[[1]],#[[2,1,1]],frees={0}}&@Reap[ToCanonical[expr],"NewIndices"]},
+result=arrange1[canonical,{Sort[{Rcase}],1},metric]
+];
+TagUnset[epsilonname,xSortPrecedence[epsilonname]];
+result
+]
+];
 (*Change here: Now arrange will have the indices of the expression. This will be*)
+
+HoldPattern[arrange[expr_,casePlus[{Weyl,Rcase__}],metric_]]:=With[{canonical={#[[1]],#[[2,1,1]],frees={Length[IndicesOf[Free][expr]]}}&@Reap[ToCanonical[expr],"NewIndices"]},arrange1[canonical,{Sort[{Rcase}],0},metric]/.RPerm->WPerm];
+(* 4. Final arrangements *)
+HoldPattern[arrange[expr_,casePlus[{Weyl,Rcase__},{epsilon,0}],metric_]]:=With[{epsilonname=epsilon[metric]},Module[{result},
+TagSet[epsilonname,xSortPrecedence[epsilonname],Infinity];
+With[{canonical={#[[1]],#[[2,1,1]],frees={0}}&@Reap[ToCanonical[expr],"NewIndices"]},
+result=arrange1[canonical,{Sort[{Rcase}],1},metric]/.RPerm->WPerm
+];
+TagUnset[epsilonname,xSortPrecedence[epsilonname]];
+result
+]
+];
 
 
 (* the list used to get the correct permutation *)
@@ -1003,13 +1094,13 @@ ricciscalar[]:>Module[{c=DummyIn@vbundle,d=DummyIn@vbundle},$RicciSign riemann[c
 PermToInv[RPerm[metric_][{case_List,0},{Rank_},indexlist_,perm_]]:=(perm/.DispatchPermToRInvRules[Rank,case])/.RInv->RInv[metric,indexlist];
 
 
-PermToInv[RPerm[metric_][{case_List,1},{Rank_},indexlist_,perm_]]:=(perm/.DispatchPermToDualRInvRules[Rank,case])/.RInv->RInv[metric,indexlist];
+PermToInv[RPerm[metric_][{case_List,1},{Rank_},indexlist_,perm_]]:=(perm/.DispatchPermToDualRInvRules[Rank,case])/.DualRInv->DualRInv[metric,indexlist];
 
 
 PermToInv[WPerm[metric_][{case_List,0},{Rank_},indexlist_,perm_]]:=perm/.DispatchPermToRInvRules[Rank,case]/.RInv->WInv[metric,indexlist];
 
 
-PermToInv[WPerm[metric_][{case_List,1},{Rank_},indexlist_,perm_]]:=perm/.DispatchPermToDualRInvRules[Rank,case]/.RInv->DualRInv[metric,indexlist];
+PermToInv[WPerm[metric_][{case_List,1},{Rank_},indexlist_,perm_]]:=perm/.DispatchPermToDualRInvRules[Rank,case]/.DualRInv->DualRInv[metric,indexlist];
 
 
 PermToInv[expr_]:=expr/.perm:(RPerm|WPerm)[_][__]:>PermToInv[perm];
@@ -1052,5 +1143,5 @@ SetNumberOfArguments[RiemannSimplify,{1,3}];
 
 End[];
 Protect["xAct`TInvar`*"];
-Unprotect[xAct`TInvar`metric,xAct`TInvar`dim,xAct`TInvar`sigma,xAct`TInvar`$InvSimplifyLevel,xAct`TInvar`$CurvatureRelations,$ExpandedCommuteOrder12Q,xAct`TInvar`TInvarDirectory];
+Unprotect[xAct`TInvar`dim,xAct`TInvar`sigma,xAct`TInvar`$InvSimplifyLevel,xAct`TInvar`$CurvatureRelations,$ExpandedCommuteOrder12Q,xAct`TInvar`TInvarDirectory];
 EndPackage[];
