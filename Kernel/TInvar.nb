@@ -595,68 +595,6 @@ RowBox[
 {
 RowBox[
 {
-"(*",
-" ",
-RowBox[
-{
-"FIXME",
-":",
-" ",
-RowBox[
-{
-RowBox[
-{
-"make",
-" ",
-"this",
-" ",
-"public",
-" ",
-"as",
-" ",
-"a",
-" ",
-"hack"
-}
-],
-" ",
-"-",
-" ",
-RowBox[
-{
-"need",
-" ",
-"to",
-" ",
-"find",
-" ",
-"a",
-" ",
-"better",
-" ",
-"solution"
-}
-]
-}
-]
-}
-],
-"*)"
-}
-],
-"\n",
-RowBox[{"(*", RowBox[{"metric", ";"}], "*)"}]
-}
-]
-],
-"Code"
-],
-Cell[
-BoxData[
-RowBox[
-{
-RowBox[
-{
 RowBox[{"$TInvarDirectory", "::", "usage"}],
 "=",
 "\"$TInvarDirectory is a global variable giving the directory in which the package file and the database can be found.\""
@@ -783,7 +721,7 @@ RowBox[
 {
 RowBox[{"WPerm", "::", "usage"}],
 "=",
-"\"WPermRPerm[g][{Rd, ed}, perm] denotes a Weyl invariant  formed by Rd Weyl tensors and ed epsilon tensors, after reordering the indices from a canonical order using permutation perm. Contracted Weyls encode the Traceless Ricci tensor.\""
+"\"WPerm[g][{Rd, ed}, perm] denotes a Weyl invariant  formed by Rd Weyl tensors and ed epsilon tensors, after reordering the indices from a canonical order using permutation perm.\""
 }
 ],
 ";"
@@ -999,7 +937,7 @@ RowBox[
 {
 RowBox[{"RiemannToPerm", "::", "usage"}],
 "=",
-"\"RiemannToPerm[expr, g] converts all Riemann scalars of metric g into their canonical permutations. If g is a list of metrics then the command is folded over the list. RiemannToPerm[expr] is automatically converted into RiemannToPerm[expr, $Metrics].\""
+"\"RiemannToPerm[expr, g] converts all Riemann tensors of metric g into their canonical permutations. If g is a list of metrics then the command is folded over the list. RiemannToPerm[expr] is automatically converted into RiemannToPerm[expr, $Metrics].\""
 }
 ],
 ";"
@@ -1025,7 +963,7 @@ RowBox[
 {
 RowBox[{"RiemannToInv", "::", "usage"}],
 "=",
-"\"RiemannToInv[expr, g] converts all Riemann scalars of metric g into their invariant form. If g is a list of metrics then the command is folded over the list. RiemannToInv[expr] is automatically converted into RiemannToInv[expr, $Metrics].\""
+"\"RiemannToInv[expr, g] converts all Riemann tensors of metric g into their invariant form. If g is a list of metrics then the command is folded over the list. RiemannToInv[expr] is automatically converted into RiemannToInv[expr, $Metrics].\""
 }
 ],
 ";"
@@ -1038,7 +976,7 @@ RowBox[
 {
 RowBox[{"RiemannSimplify", "::", "usage"}],
 "=",
-"\"RiemannSimplify[expr, level, cr, g] simplifies the Riemann scalars of metric g using relations up to the given level (see usage message for InvSimplify). With cr=True contracted Riemann tensors are replaced by Ricci tensors. If g is a list of metrics then the command is folded over the list. RiemannSimplify[expr] uses the defaults $InvSimplifyLevel, $CurvatureRelations and $Metrics, respectively. See usage messages for those global variables.\""
+"\"RiemannSimplify[expr, level, cr, g] simplifies the Riemann tensors of metric g using relations up to the given level (see usage message for InvSimplify). With cr=True contracted Riemann tensors are replaced by Ricci tensors. If g is a list of metrics then the command is folded over the list. RiemannSimplify[expr] uses the defaults $InvSimplifyLevel, $CurvatureRelations and $Metrics, respectively. See usage messages for those global variables.\""
 }
 ],
 ";"
@@ -4377,10 +4315,10 @@ RowBox[
 ";"
 }
 ],
-"\n"
+"\[IndentingNewLine]"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[
@@ -4607,10 +4545,10 @@ RowBox[{"rank", ",", "order", ",", "#"}],
 ";"
 }
 ],
-"\n"
+"\[IndentingNewLine]"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[
@@ -4627,10 +4565,10 @@ RowBox[{"{", RowBox[{"{", "0", "}"}], "}"}]
 ";"
 }
 ],
-"\n"
+"\[IndentingNewLine]"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[
@@ -4664,10 +4602,10 @@ RowBox[
 ";"
 }
 ],
-"\n"
+"\[IndentingNewLine]"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[
@@ -4732,10 +4670,10 @@ RowBox[{"{", RowBox[{"0", ",", "0", ",", "0"}], "}"}],
 ";"
 }
 ],
-"\n"
+"\[IndentingNewLine]"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[
@@ -4831,10 +4769,10 @@ RowBox[
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -4996,10 +4934,10 @@ RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "0"}],
 ";"
 }
 ],
-"\n"
+"\[IndentingNewLine]"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[
@@ -5227,10 +5165,10 @@ RowBox[
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -6025,10 +5963,10 @@ RowBox[{"0", ",", "14", ",", "7"}],
 ";"
 }
 ],
-"\n"
+"\[IndentingNewLine]"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[
@@ -6045,10 +5983,10 @@ RowBox[{"{", RowBox[{"{", "0", "}"}], "}"}]
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -6082,10 +6020,10 @@ RowBox[
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -6150,10 +6088,10 @@ RowBox[{"{", RowBox[{"0", ",", "0", ",", "0"}], "}"}],
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -6249,10 +6187,10 @@ RowBox[
 ";"
 }
 ],
-"\n"
+"\[IndentingNewLine]"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[
@@ -6414,10 +6352,10 @@ RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "0"}],
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -6645,10 +6583,10 @@ RowBox[
 ";"
 }
 ],
-"\n"
+"\[IndentingNewLine]"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[
@@ -6878,10 +6816,10 @@ RowBox[{"0", ",", "10", ",", "5"}],
 ";"
 }
 ],
-"\n"
+"\[IndentingNewLine]"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[
@@ -6903,10 +6841,10 @@ RowBox[{"{", RowBox[{"{", "0", "}"}], "}"}]
 ";"
 }
 ],
-"\n"
+"\[IndentingNewLine]"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[
@@ -6950,10 +6888,10 @@ RowBox[
 ";"
 }
 ],
-"\n"
+"\[IndentingNewLine]"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[
@@ -7033,10 +6971,10 @@ RowBox[{"{", RowBox[{"0", ",", "0", ",", "0"}], "}"}],
 ";"
 }
 ],
-"\n"
+"\[IndentingNewLine]"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[
@@ -7152,10 +7090,10 @@ RowBox[
 ";"
 }
 ],
-"\n"
+"\[IndentingNewLine]"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[
@@ -7189,10 +7127,10 @@ RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "0"}],
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -19950,8 +19888,8 @@ RowBox[{"{", RowBox[{"Riemann", ",", "m"}], "}"}],
 ],
 "\[IndentingNewLine]",
 "\[IndentingNewLine]",
-"\[IndentingNewLine]",
 "\n",
+"\[IndentingNewLine]",
 "\[IndentingNewLine]",
 RowBox[
 {
@@ -20435,7 +20373,7 @@ RowBox[{"xSortPrecedence", "[", "epsilonname", "]"}]
 ";"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 "(*",
@@ -20480,7 +20418,7 @@ RowBox[{"expression", ".", " ", "This"}],
 "*)"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 "\n",
 RowBox[
 {

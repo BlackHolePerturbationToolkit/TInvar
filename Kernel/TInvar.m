@@ -61,10 +61,6 @@ Print["These packages come with ABSOLUTELY NO WARRANTY; for details type Disclai
 Print[xAct`xCore`Private`bars]]
 
 
-(* FIXME: make this public as a hack - need to find a better solution*)
-(*metric;*)
-
-
 (* ::Input::Initialization:: *)
 $TInvarDirectory::usage="$TInvarDirectory is a global variable giving the directory in which the package file and the database can be found.";
 
@@ -83,7 +79,7 @@ RPerm::usage="RPerm[g][{c, ed}, perm] denotes a Riemann invariant of case c with
 (* ::Input::Initialization:: *)
 WInv::usage="WInv[g][c, r] denotes the Weyl invariant of case c and index r associated to the metric g.";
 DualWInv::usage="DualWInv[g][c, r] denotes the dual Weyl invariant of case c and index r associated to the metric g.";
-WPerm::usage="WPermRPerm[g][{Rd, ed}, perm] denotes a Weyl invariant  formed by Rd Weyl tensors and ed epsilon tensors, after reordering the indices from a canonical order using permutation perm. Contracted Weyls encode the Traceless Ricci tensor.";
+WPerm::usage="WPerm[g][{Rd, ed}, perm] denotes a Weyl invariant  formed by Rd Weyl tensors and ed epsilon tensors, after reordering the indices from a canonical order using permutation perm.";
 
 
 (* ::Input::Initialization:: *)
@@ -107,10 +103,10 @@ InvSimplify::usage="InvSimplify[expr, level] simplifies the invariants of the fo
 InvToPerm::usage="InvToPerm[expr] converts all invariants in expr into their corresponding permutations with head RPerm or WPerm.";
 PermToRiemann::usage="PermToRiemann[expr, cr] converts all permutations into their explicit tensor expressions. With cr=True contracted Riemann tensors are replaced by Ricci tensors. The default value used in PermToRiemann[expr] is $CurvatureRelations.";
 InvToRiemann::usage="InvToRiemann[expr, cr] converts all invariants into their explicit tensor expressions. With cr=True contracted Riemann tensors are replaced by Ricci tensors. The default value used in InvToRiemann[expr] is $CurvatureRelations.";
-RiemannToPerm::usage="RiemannToPerm[expr, g] converts all Riemann scalars of metric g into their canonical permutations. If g is a list of metrics then the command is folded over the list. RiemannToPerm[expr] is automatically converted into RiemannToPerm[expr, $Metrics].";
+RiemannToPerm::usage="RiemannToPerm[expr, g] converts all Riemann tensors of metric g into their canonical permutations. If g is a list of metrics then the command is folded over the list. RiemannToPerm[expr] is automatically converted into RiemannToPerm[expr, $Metrics].";
 PermToInv::usage="PermToInv[expr] converts all permutations in expr into their correspondent invariants. It is assumed that the permutations have been already canonicalized.";
-RiemannToInv::usage="RiemannToInv[expr, g] converts all Riemann scalars of metric g into their invariant form. If g is a list of metrics then the command is folded over the list. RiemannToInv[expr] is automatically converted into RiemannToInv[expr, $Metrics].";
-RiemannSimplify::usage="RiemannSimplify[expr, level, cr, g] simplifies the Riemann scalars of metric g using relations up to the given level (see usage message for InvSimplify). With cr=True contracted Riemann tensors are replaced by Ricci tensors. If g is a list of metrics then the command is folded over the list. RiemannSimplify[expr] uses the defaults $InvSimplifyLevel, $CurvatureRelations and $Metrics, respectively. See usage messages for those global variables.";
+RiemannToInv::usage="RiemannToInv[expr, g] converts all Riemann tensors of metric g into their invariant form. If g is a list of metrics then the command is folded over the list. RiemannToInv[expr] is automatically converted into RiemannToInv[expr, $Metrics].";
+RiemannSimplify::usage="RiemannSimplify[expr, level, cr, g] simplifies the Riemann tensors of metric g using relations up to the given level (see usage message for InvSimplify). With cr=True contracted Riemann tensors are replaced by Ricci tensors. If g is a list of metrics then the command is folded over the list. RiemannSimplify[expr] uses the defaults $InvSimplifyLevel, $CurvatureRelations and $Metrics, respectively. See usage messages for those global variables.";
 
 
 (* ::Input::Initialization:: *)
