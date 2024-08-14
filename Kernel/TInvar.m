@@ -258,10 +258,10 @@ readline[string_]:=StringTake[string,{movetofirst@positionof[string," := "],Stri
 (*Need to check this works for TInvar*)
 
 
-ReadInvarPerms[filename_,"Maple"]:=ToExpression/@replacebrackets/@readline/@CheckImport[StringJoin[$TInvarDirectory,"/",filename],"Lines"];
+ReadInvarPerms[filename_,"Maple"]:=ToExpression/@replacebrackets/@readline/@CheckImport[FileNameJoin[{$TInvarDirectory,filename<>".gz"}],"Lines"];
 
 
-ReadInvarRules[filename_,"Mathematica"]:=ToExpression/@CheckImport[FileNameJoin[{$TInvarDirectory,filename}],"Lines"];
+ReadInvarRules[filename_,"Mathematica"]:=ToExpression/@CheckImport[FileNameJoin[{$TInvarDirectory,filename<>".gz"}],"Lines"];
 
 
 RemoveRInvRules[step_Integer,rank_Integer,degree_Integer,dim___]:=RemoveRInvRules[step,rank,Table[0,{degree}]];
