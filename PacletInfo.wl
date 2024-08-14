@@ -2,7 +2,7 @@
 
 Paclet[
   "Name" -> "TInvar",
-  "Version" -> "0.3.0",
+  "Version" -> "0.4.0",
   "MathematicaVersion" -> "10.2+",
   "Creator" -> "Kevin Kiely, Barry Wardell, Adrian Ottewill, Jose M. Martin-Garcia",
   "Description" -> "A set of functions for canonicalization of expressions involving the Riemann tensor",

@@ -27,10 +27,67 @@ FontSlant -> "Italic"
 ],
 "\n\nJos\[EAcute] M. Mart\[IAcute]n-Garc\[IAcute]a < jose@xact.es>\n",
 StyleBox["Wolfram Research\n\n", FontSlant -> "Italic"],
-"\[Copyright] 2023\n\nhttp://www.xact.es"
+"\[Copyright] 2023\n\nhttp://www.xact.es\n\n",
+StyleBox["Note:\n", FontWeight -> "Bold"],
+"Before committing a new version of this notebook to git, make sure to convert it to a readable format by running the following command from a separate notebook:"
 }
 ],
 "Text"
+],
+Cell[
+BoxData[
+RowBox[
+{
+RowBox[
+{"ResourceFunction", "[", "\"SaveReadableNotebook\"", "]"}
+],
+"[",
+RowBox[
+{
+"\"TInvar.nb\"",
+",",
+" ",
+"\"TInvar.nb\"",
+",",
+"\n",
+"  ",
+RowBox[{"\"IndentSize\"", " ", "->", " ", "0"}],
+",",
+"\n",
+"  ",
+RowBox[
+{
+"\"ExcludedCellOptions\"",
+" ",
+"->",
+" ",
+RowBox[
+{
+"{",
+RowBox[
+{
+"CellChangeTimes",
+",",
+" ",
+"ExpressionUUID",
+",",
+" ",
+"CellLabel"
+}
+],
+"}"
+}
+]
+}
+]
+}
+],
+"]"
+}
+]
+],
+"Input",
+Evaluatable -> False
 ],
 Cell[
 CellGroupData[
@@ -75,6 +132,8 @@ RowBox[{"2021", ",", " ", "10", ",", " ", "17"}],
 "\n",
 RowBox[
 {
+RowBox[
+{
 "xAct`TInvar`$Version",
 " ",
 "=",
@@ -84,17 +143,20 @@ RowBox[
 "{",
 RowBox[
 {
-"\"0.1.0\"",
+"\"0.4.0\"",
 ",",
 " ",
 RowBox[
-{"{", RowBox[{"2023", ",", " ", "11", ",", " ", "9"}], "}"}
+{"{", RowBox[{"2024", ",", " ", "8", ",", " ", "14"}], "}"}
 ]
 }
 ],
 "}"
 }
 ]
+}
+],
+";"
 }
 ]
 }
@@ -4315,10 +4377,10 @@ RowBox[
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -4545,10 +4607,10 @@ RowBox[{"rank", ",", "order", ",", "#"}],
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -4565,10 +4627,10 @@ RowBox[{"{", RowBox[{"{", "0", "}"}], "}"}]
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -4602,10 +4664,10 @@ RowBox[
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -4670,10 +4732,10 @@ RowBox[{"{", RowBox[{"0", ",", "0", ",", "0"}], "}"}],
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -4769,10 +4831,10 @@ RowBox[
 ";"
 }
 ],
-"\n"
+"\[IndentingNewLine]"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[
@@ -4934,10 +4996,10 @@ RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "0"}],
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -5165,10 +5227,10 @@ RowBox[
 ";"
 }
 ],
-"\n"
+"\[IndentingNewLine]"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[
@@ -5963,10 +6025,10 @@ RowBox[{"0", ",", "14", ",", "7"}],
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -5983,10 +6045,10 @@ RowBox[{"{", RowBox[{"{", "0", "}"}], "}"}]
 ";"
 }
 ],
-"\n"
+"\[IndentingNewLine]"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[
@@ -6020,10 +6082,10 @@ RowBox[
 ";"
 }
 ],
-"\n"
+"\[IndentingNewLine]"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[
@@ -6088,10 +6150,10 @@ RowBox[{"{", RowBox[{"0", ",", "0", ",", "0"}], "}"}],
 ";"
 }
 ],
-"\n"
+"\[IndentingNewLine]"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[
@@ -6187,10 +6249,10 @@ RowBox[
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -6352,10 +6414,10 @@ RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "0"}],
 ";"
 }
 ],
-"\n"
+"\[IndentingNewLine]"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[
@@ -6583,10 +6645,10 @@ RowBox[
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -6816,10 +6878,10 @@ RowBox[{"0", ",", "10", ",", "5"}],
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -6841,10 +6903,10 @@ RowBox[{"{", RowBox[{"{", "0", "}"}], "}"}]
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -6888,10 +6950,10 @@ RowBox[
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -6971,10 +7033,10 @@ RowBox[{"{", RowBox[{"0", ",", "0", ",", "0"}], "}"}],
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -7090,10 +7152,10 @@ RowBox[
 ";"
 }
 ],
-"\[IndentingNewLine]"
+"\n"
 }
 ],
-"\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 RowBox[
@@ -7127,10 +7189,10 @@ RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "0"}],
 ";"
 }
 ],
-"\n"
+"\[IndentingNewLine]"
 }
 ],
-"\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[
@@ -19889,8 +19951,8 @@ RowBox[{"{", RowBox[{"Riemann", ",", "m"}], "}"}],
 "\[IndentingNewLine]",
 "\[IndentingNewLine]",
 "\[IndentingNewLine]",
-"\[IndentingNewLine]",
 "\n",
+"\[IndentingNewLine]",
 RowBox[
 {
 "(*",
@@ -20418,8 +20480,8 @@ RowBox[{"expression", ".", " ", "This"}],
 "*)"
 }
 ],
-"\n",
 "\[IndentingNewLine]",
+"\n",
 RowBox[
 {
 RowBox[

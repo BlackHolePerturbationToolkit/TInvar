@@ -20,7 +20,7 @@
 
 
 xAct`TInvar`$xTensorVersionExpected = {"1.2.0", {2021, 10, 17}};
-xAct`TInvar`$Version = {"0.1.0", {2023, 11, 9}}
+xAct`TInvar`$Version = {"0.4.0", {2024, 8, 14}};
 
 
 With[{xAct`TInvar`Private`TInvarSymbols=DeleteCases[Join[Names["xAct`TInvar`*"],Names["xAct`TInvar`Private`*"]],"$Version"|"xAct`TInvar`$Version"|"$TInvarVersionExpected"|"xAct`TInvar`$xTensorVersionExpected"]},
