@@ -23,6 +23,9 @@ Paclet[
       {
         "Guides/TInvar"
       }
+    },
+    { "Asset",
+      "Assets" -> {{"Riemann", "Riemann"}}
     }
   }
 ]
