@@ -16,7 +16,7 @@ After installation, TInvar can be loaded using
 ```
 << xAct`TInvar`
 ```
-Usage examples can be found in the documentation for the `RiemannSimplify` function. This is available within the Documentation Center by selecting Help &#8594; Wolfram Documentation from then menu and searching for `RiemannSimplify`.
+Usage examples can be found in the documentation. This is available within the Documentation Center by selecting Help &#8594; Wolfram Documentation from then menu and searching for `TInvar`.
 
 ## Authors
 
