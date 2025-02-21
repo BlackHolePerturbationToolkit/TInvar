@@ -8,6 +8,7 @@ The TInvar package provides a set of tools for canonicalization of expressions i
 2. TInvar is distributed as a Paclet that can be installed using [PacletInstall](https://reference.wolfram.com/language/ref/PacletInstall.html.en). For example, to install the latest version from the Black Hole Perturbation Toolkit Paclet Server:
 ```Mathematica
 PacletSiteRegister["https://pacletserver.bhptoolkit.org", "Black Hole Perturbation Toolkit Paclet Server"]
+PacletSiteUpdate["https://pacletserver.bhptoolkit.org"]
 PacletInstall["TInvar"]
 ```
 
